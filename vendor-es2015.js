@@ -92606,13 +92606,14 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.1
 /*!**************************************************************!*\
   !*** ./node_modules/mc-ui-angular/fesm2015/mc-ui-angular.js ***!
   \**************************************************************/
-/*! exports provided: ButtonComponent, DrawerComponent, FieldComponent, FormComponent, GridBodyComponent, GridComponent, GridHeaderComponent, IconComponent, InputComponent, ListBasicComponent, ListComponent, ListItemComponent, LoaderComponent, MCUIModule, MCUIService, MaskComponent, MessageBarComponent, PopupComponent, ScrollComponent, TextareaComponent, ɵa, ɵb, ɵc, ɵd */
+/*! exports provided: ButtonComponent, DrawerComponent, DropdownComponent, FieldComponent, FormComponent, GridBodyComponent, GridComponent, GridHeaderComponent, IconComponent, InputComponent, ListBasicComponent, ListComponent, ListItemComponent, LoaderComponent, MCUIModule, MCUIService, MaskComponent, MessageBarComponent, PopupComponent, PopupListComponent, ScrollComponent, TextareaComponent, ɵa, ɵb, ɵc */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonComponent", function() { return ButtonComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrawerComponent", function() { return DrawerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DropdownComponent", function() { return DropdownComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FieldComponent", function() { return FieldComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormComponent", function() { return FormComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridBodyComponent", function() { return GridBodyComponent; });
@@ -92629,12 +92630,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaskComponent", function() { return MaskComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageBarComponent", function() { return MessageBarComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopupComponent", function() { return PopupComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopupListComponent", function() { return PopupListComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollComponent", function() { return ScrollComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextareaComponent", function() { return TextareaComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return FieldBaseComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return BaseComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return ScrollAsyncComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return PopupListComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
@@ -93121,9 +93122,10 @@ class MCUIService {
      * @param {?} cmp
      * @return {?}
      */
-    removeComponentEl(cmp) {
+    removeComponent(cmp) {
         this.appRef.detachView(cmp.hostView);
         cmp.destroy();
+        cmp = null;
     }
     /**
      * @return {?}
@@ -93202,14 +93204,14 @@ class BaseComponent {
      */
     ngOnInit() {
         this.initCmp();
-        // theme should be the last class for priority
-        this.applyThemeClass();
     }
     /**
      * @return {?}
      */
     ngAfterViewInit() {
         this.afterInitCmp();
+        // theme should be the last class for priority
+        this.applyThemeClass();
         setTimeout((/**
          * @return {?}
          */
@@ -93312,6 +93314,7 @@ class FieldBaseComponent extends BaseComponent {
         this.er = er;
         this.service = service;
         this._value = '';
+        this.valueChangedBy = '';
         this.readonly = false;
         this.label = '';
         this.type = 'text';
@@ -93331,6 +93334,7 @@ class FieldBaseComponent extends BaseComponent {
             this._value = value;
             this.valueChange.emit({
                 target: this,
+                by: this.valueChangedBy,
                 oldValue,
                 value: this._value
             });
@@ -93343,6 +93347,10 @@ class FieldBaseComponent extends BaseComponent {
         return this._value;
     }
     /**
+     * @return {?}
+     */
+    focus() { }
+    /**
      * @param {?} e
      * @return {?}
      */
@@ -93351,7 +93359,7 @@ class FieldBaseComponent extends BaseComponent {
             /** @type {?} */
             const oldValue = this.value;
             this.value = e.value;
-            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue: oldValue });
+            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue });
         }
     }
 }
@@ -93386,26 +93394,32 @@ class InputComponent extends FieldBaseComponent {
         this.service = service;
     }
     /**
+     * @param {?=} select
+     * @return {?}
+     */
+    focus(select = true) {
+        this.inputEl = this.inputEl || this.el.querySelector('.input--input');
+        this.inputEl.focus();
+        if (select) {
+            this.inputEl.select();
+        }
+    }
+    /**
      * @param {?} e
      * @return {?}
      */
     onKeyUp(e) {
         // recommend strong typing, weak -> e.event.target
-        /** @type {?} */
-        const value = e.target.value;
-        if (value !== this.value) {
-            /** @type {?} */
-            const oldValue = this.value;
-            this.value = value;
-            this.valueChange.emit({ target: this, event: e, value: this.value, oldValue });
-        }
+        this.valueChangedBy = 'keyboard';
+        this.value = e.target.value;
+        this.valueChangedBy = '';
     }
 }
 InputComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-input',
                 template: "<input class=\"input--input\" [type]=\"type\" [readonly]=\"readonly\" [name]=\"name\" autocomplete=\"off\" [placeholder]=\"placeholder\" [value]=\"value\" (keyup)=\"onKeyUp($event)\">\n",
-                styles: [":host{display:block;position:relative}:host .input--input{display:inline-block;width:100%;padding:.65rem .75rem;line-height:1.25;color:#000;background-color:#fff;background-image:none;background-clip:padding-box;border:1px solid #000;border-radius:3px;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}:host.readonly{display:inline-block}:host.readonly .input--input{cursor:default;pointer-events:none;border:0;width:auto;outline:0}"]
+                styles: [":host{display:block;position:relative}:host .input--input{display:inline-block;width:100%;padding:0 20px;line-height:43px;color:#23272b;background-color:#fff;border:1px solid #e2e6ea;border-radius:3px}:host.readonly{display:inline-block}:host.readonly .input--input{cursor:default;pointer-events:none;border:0;width:auto;outline:0}"]
             }] }
 ];
 /** @nocollapse */
@@ -93634,9 +93648,10 @@ class ScrollComponent extends BaseComponent {
         this.page2Index = -1;
         this._rowCount = 0;
         this.ticking = false;
+        this.emptyText = 'No Data';
         this.page1Tpl = null;
         this.page2Tpl = null;
-        this.rowHeight = 30;
+        this.rowHeight = 45;
         this.isLoading = false;
         this.updatePage = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
@@ -93647,10 +93662,11 @@ class ScrollComponent extends BaseComponent {
     set rowCount(value) {
         if (!this.util.isEmpty(value)) {
             this._rowCount = value;
-            // row count can be updated after rendering ui
-            if (this.rendered) {
-                this.updateState();
-            }
+            // init value
+            this.page1Index = -2;
+            this.page2Index = -1;
+            this.scrollTop = 0;
+            this.oldScrollTop = -1;
         }
     }
     /**
@@ -93681,9 +93697,10 @@ class ScrollComponent extends BaseComponent {
         };
     }
     /**
+     * @param {?=} refresh
      * @return {?}
      */
-    updateState() {
+    updateState(refresh = false) {
         /** @type {?} */
         const scrollTop = this.scrollTop;
         /** @type {?} */
@@ -93705,11 +93722,12 @@ class ScrollComponent extends BaseComponent {
         /** @type {?} */
         const contentHeight = rowCount === 0 ? rowHeight : rowHeight * rowCount;
         /** @type {?} */
-        const pageLastIndex = Math.floor(contentHeight / pageHeight);
+        const pageLastIndex = Math.floor((contentHeight - 1) / pageHeight);
+        // -1 for if it is the same as with the pageHeight, the page can be +1.
         /** @type {?} */
         const nextPageIndex = isDown ? Math.ceil(scrollTop / pageHeight) : Math.floor(scrollTop / pageHeight);
         // console.log(nextPageIndex, pageLastIndex, page1Index, page2Index);
-        if (nextPageIndex <= pageLastIndex && page1Index !== nextPageIndex && page2Index !== nextPageIndex) {
+        if (refresh || (nextPageIndex <= pageLastIndex && page1Index !== nextPageIndex && page2Index !== nextPageIndex)) {
             // It may not have two pages at all. keep the full logic for readability.
             if (page1Index === -2) {
                 // init
@@ -93728,13 +93746,29 @@ class ScrollComponent extends BaseComponent {
                 page2Index = page1Index + 1;
             }
             /** @type {?} */
-            const page1StartIndex = page1Index * pageRowCount;
+            let page1StartIndex = page1Index * pageRowCount;
             /** @type {?} */
-            const page2StartIndex = page2Index * pageRowCount;
+            let page2StartIndex = page2Index * pageRowCount;
             /** @type {?} */
-            const page1EndIndex = page1StartIndex + pageRowCount - 1;
+            let page1EndIndex = page1StartIndex + pageRowCount - 1;
             /** @type {?} */
-            const page2EndIndex = page2StartIndex + pageRowCount - 1;
+            let page2EndIndex = page2StartIndex + pageRowCount - 1;
+            if (page1StartIndex >= rowCount) {
+                page1StartIndex = -1;
+                page1EndIndex = -1;
+                page1Index = -2;
+            }
+            else if (page1EndIndex >= rowCount) {
+                page1EndIndex = rowCount - 1;
+            }
+            if (page2StartIndex >= rowCount) {
+                page2StartIndex = -1;
+                page2EndIndex = -1;
+                page2Index = -1;
+            }
+            else if (page2EndIndex >= rowCount) {
+                page2EndIndex = rowCount - 1;
+            }
             /** @type {?} */
             const page1Top = page1StartIndex * rowHeight;
             /** @type {?} */
@@ -93759,7 +93793,16 @@ class ScrollComponent extends BaseComponent {
                 page1StartIndex,
                 page1EndIndex,
                 page2StartIndex,
-                page2EndIndex
+                page2EndIndex,
+                page1Index,
+                page2Index,
+                rowCount,
+                pageLastIndex,
+                page1IsFirst: page1Index === 0,
+                page2IsFirst: page2Index === 0,
+                page1IsLast: page1Index !== -1 && page1Index === pageLastIndex,
+                page2IsLast: page2Index !== -1 && page2Index === pageLastIndex,
+                refresh
             });
         }
         this.oldScrollTop = scrollTop;
@@ -93786,8 +93829,8 @@ class ScrollComponent extends BaseComponent {
 ScrollComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-scroll',
-                template: "<div class=\"scroll\" (scroll)=\"onScroll($event)\">\n  <div class=\"scroll--content\" [style.height.px]=\"state.contentHeight\">\n    <div class=\"scroll--content--page1\" [style.top.px]=\"state.page1Top\">\n      <ng-container *ngTemplateOutlet=\"page1Tpl\"></ng-container>\n    </div>\n    <div class=\"scroll--content--page2\" [style.top.px]=\"state.page2Top\">\n      <ng-container *ngTemplateOutlet=\"page2Tpl\"></ng-container>\n    </div>\n  </div>\n</div>\n<mc-loader [style.display]=\"isLoading ? '' : 'none'\" [theme]=\"['ring', 'small']\"></mc-loader>\n",
-                styles: [":host{display:block;position:relative;height:100%}:host .scroll{overflow-y:auto;height:100%}:host .scroll--content--page1,:host .scroll--content--page2{position:absolute;left:0}"]
+                template: "<div class=\"scroll\" (scroll)=\"onScroll($event)\">\n  <div class=\"scroll--content\" [style.height.px]=\"state.contentHeight\">\n    <div class=\"scroll--content--page1\" [style.top.px]=\"state.page1Top\">\n      <ng-container *ngTemplateOutlet=\"page1Tpl\"></ng-container>\n    </div>\n    <div class=\"scroll--content--page2\" [style.top.px]=\"state.page2Top\">\n      <ng-container *ngTemplateOutlet=\"page2Tpl\"></ng-container>\n    </div>\n  </div>\n</div>\n<div *ngIf=\"!rowCount\" class=\"scroll--empty\" [style.lineHeight.px]=\"rowHeight\">{{emptyText}}</div>\n<mc-loader [style.display]=\"isLoading ? '' : 'none'\" [theme]=\"['ring', 'small']\"></mc-loader>\n",
+                styles: [":host{display:block;position:relative;height:100%}:host .scroll{overflow-y:auto;height:100%}:host .scroll--content--page1,:host .scroll--content--page2{position:absolute;width:100%;left:0}:host .scroll--empty{position:absolute;top:0;left:0;width:100%;text-align:center}"]
             }] }
 ];
 /** @nocollapse */
@@ -93796,6 +93839,7 @@ ScrollComponent.ctorParameters = () => [
     { type: MCUIService }
 ];
 ScrollComponent.propDecorators = {
+    emptyText: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     page1Tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     page2Tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
@@ -93822,16 +93866,21 @@ class ScrollAsyncComponent extends BaseComponent {
         this.neededDataIndex = -1;
         this.neededPageIndex = 1;
         this.page1Indexes = {
-            start: 0,
-            end: 0
+            start: -1,
+            end: -1
         };
         this.page2Indexes = {
-            start: 0,
-            end: 0
+            start: -1,
+            end: -1
         };
         this.isLoading = false;
+        this.page1IsFirst = false;
+        this.page2IsFirst = false;
+        this.page1IsLast = false;
+        this.page2IsLast = false;
+        this.emptyText = 'No Data';
         this.idField = 'id';
-        this.rowHeight = 30;
+        this.rowHeight = 45;
         // there is no data, then it triggers "needData" event.
         this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
@@ -93840,7 +93889,11 @@ class ScrollAsyncComponent extends BaseComponent {
      * @return {?}
      */
     set data(value) {
+        // console.log('update scroll data', value);
         if (value) {
+            // init page
+            this.page1Indexes = { start: -1, end: -1 };
+            this.page2Indexes = { start: -1, end: -1 };
             /** @type {?} */
             let data;
             if (Array.isArray(value)) {
@@ -93866,7 +93919,16 @@ class ScrollAsyncComponent extends BaseComponent {
                 })) : null;
             }
             this._data = data;
-            this.rowCount = this._data.rowCount;
+            this.rowCount = data.rowCount;
+            // after rendering, it need to update the scroll state manually whenever the data is updated since the scroll doesn't have data property.
+            if (this.rendered) {
+                this.updateHeight();
+                // update after the rowCount is applied.
+                setTimeout((/**
+                 * @return {?}
+                 */
+                () => this.scrollCmp.updateState(true)));
+            }
         }
     }
     /**
@@ -93903,6 +93965,14 @@ class ScrollAsyncComponent extends BaseComponent {
         }
     }
     /**
+     * @return {?}
+     */
+    afterInitCmp() {
+        // the content height is smaller than container height, adjust container height.
+        // this needs to run before rendering scroll.
+        this.updateHeight();
+    }
+    /**
      * @param {?} indexes
      * @param {?} pageIndex
      * @return {?}
@@ -93912,13 +93982,14 @@ class ScrollAsyncComponent extends BaseComponent {
         const start = indexes.start;
         /** @type {?} */
         const end = indexes.end;
-        if (!this.data.rows[start]) {
+        if (this.rowCount && !this.data.rows[start]) {
             this.neededPageIndex = pageIndex;
             // skip the same request.
             if (this.neededDataIndex !== start) {
                 this.isLoading = true;
                 this.neededDataIndex = start;
                 this.needData.emit({
+                    target: this,
                     index: this.neededDataIndex,
                     action: 'append'
                 }); // when tree, it needs to insert data
@@ -93938,6 +94009,23 @@ class ScrollAsyncComponent extends BaseComponent {
     /**
      * @return {?}
      */
+    updateHeight() {
+        // when the items height are smaller than container height.
+        /** @type {?} */
+        const height = this.rowCount === 0 ? this.rowHeight : this.rowHeight * this.rowCount;
+        if (!this.originHeight) {
+            this.originHeight = this.el.clientHeight;
+        }
+        if (this.originHeight > height) {
+            this.el.style.height = height + 'px';
+        }
+        else {
+            this.el.style.height = this.originHeight + 'px';
+        }
+    }
+    /**
+     * @return {?}
+     */
     getItems() {
         return this.data.rows;
     }
@@ -93946,16 +94034,34 @@ class ScrollAsyncComponent extends BaseComponent {
      * @return {?}
      */
     onUpdatePage(e) {
-        if (this.page1Indexes.start !== e.page1StartIndex || this.page1Indexes.end !== e.page1EndIndex) {
+        if (e.page1StartIndex < 0) {
             this.page1Indexes.start = e.page1StartIndex;
             this.page1Indexes.end = e.page1EndIndex;
-            this.updateData(this.page1Indexes, 1);
+            this.page1Data = [];
         }
-        if (this.page2Indexes.start !== e.page2StartIndex || this.page2Indexes.end !== e.page2EndIndex) {
+        else {
+            if (this.page1Indexes.start !== e.page1StartIndex || this.page1Indexes.end !== e.page1EndIndex) {
+                this.page1Indexes.start = e.page1StartIndex;
+                this.page1Indexes.end = e.page1EndIndex;
+                this.updateData(this.page1Indexes, 1);
+            }
+        }
+        if (e.page2StartIndex < 0) {
             this.page2Indexes.start = e.page2StartIndex;
             this.page2Indexes.end = e.page2EndIndex;
-            this.updateData(this.page2Indexes, 2);
+            this.page2Data = [];
         }
+        else {
+            if (this.page2Indexes.start !== e.page2StartIndex || this.page2Indexes.end !== e.page2EndIndex) {
+                this.page2Indexes.start = e.page2StartIndex;
+                this.page2Indexes.end = e.page2EndIndex;
+                this.updateData(this.page2Indexes, 2);
+            }
+        }
+        this.page1IsLast = e.page1IsLast;
+        this.page2IsLast = e.page2IsLast;
+        this.page1IsFirst = e.page1IsFirst;
+        this.page2IsFirst = e.page2IsFirst;
     }
     /**
      * @param {?} e
@@ -93966,6 +94072,8 @@ class ScrollAsyncComponent extends BaseComponent {
     }
 }
 ScrollAsyncComponent.propDecorators = {
+    scrollCmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['scrollCmp', { static: false },] }],
+    emptyText: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
@@ -93990,13 +94098,18 @@ class ListBasicComponent extends BaseComponent {
         this._service = _service;
         // checking the selected item ids
         this.selectedItemsMap = new Map();
-        this.rowHeight = 30;
+        this.rowHeight = 45; // horizontal ? 100% : rowHeight;
+        // horizontal ? 100% : rowHeight;
         this.multiSelect = false;
         this.delete = false;
         // for ListItem
         this.itemTpl = null;
         this.idField = 'id';
         this.nameField = 'name';
+        this.isLastPage = false;
+        this.isFirstPage = false;
+        this.isScrollPage = false;
+        this.horizontal = false;
     }
     /**
      * @param {?} value
@@ -94016,7 +94129,7 @@ class ListBasicComponent extends BaseComponent {
      * @return {?}
      */
     get selectedItems() {
-        return this._selectedItems;
+        return this.getSelectedItems();
     }
     /**
      * @param {?} value
@@ -94048,6 +94161,17 @@ class ListBasicComponent extends BaseComponent {
         return this._data;
     }
     /**
+     * @return {?}
+     */
+    afterRenderCmp() {
+        // if it has the selected item.
+        /** @type {?} */
+        const selectedItems = this.getSelectedItems();
+        if (selectedItems.length) {
+            this.emitAction('select-item', selectedItems[0]);
+        }
+    }
+    /**
      * @param {?} index
      * @param {?} item
      * @return {?}
@@ -94056,11 +94180,27 @@ class ListBasicComponent extends BaseComponent {
         return item[this.idField];
     }
     /**
+     * @return {?}
+     */
+    getSelectedItems() {
+        /** @type {?} */
+        const items = [];
+        this.selectedItemsMap.forEach((/**
+         * @param {?} value
+         * @return {?}
+         */
+        value => items.push(value)));
+        return items;
+    }
+    /**
      * @param {?} item
      * @return {?}
      */
     selectItem(item) {
         // TODO: check the list is rerendered.
+        if (!this.multiSelect) {
+            this.selectedItemsMap = new Map();
+        }
         this.selectedItemsMap.set(item[this.idField] + '', item);
     }
     /**
@@ -94069,7 +94209,18 @@ class ListBasicComponent extends BaseComponent {
      */
     unselectItem(item) {
         // TODO: check the list is rerendered.
-        this.selectedItemsMap.delete(item[this.idField] + '');
+        if (this.multiSelect) {
+            this.selectedItemsMap.delete(item[this.idField] + '');
+        }
+    }
+    /**
+     * @param {?} actionType
+     * @param {?} selectedItem
+     * @param {?=} event
+     * @return {?}
+     */
+    emitAction(actionType, selectedItem, event = null) {
+        this.action.emit({ target: this, action: actionType, event: event, selectedItem: selectedItem, selectedItems: this.getSelectedItems() });
     }
     /**
      * @param {?} e
@@ -94085,9 +94236,7 @@ class ListBasicComponent extends BaseComponent {
                 else {
                     this.unselectItem(e.data);
                 }
-                e.target = this;
-                e.selectedItems = this.selectedItemsMap.values();
-                this.action.emit(e);
+                this.emitAction(e.action, e.data, e.event);
                 break;
         }
     }
@@ -94095,8 +94244,8 @@ class ListBasicComponent extends BaseComponent {
 ListBasicComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-list-basic',
-                template: "<div *ngFor=\"let item of data; trackBy: key\" class=\"list--item\" [style.height.px]=\"rowHeight\">\n  <mc-list-item [tpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\" [data]=\"item\" [hasCheckBox]=\"multiSelect\" [hasDeleteButton]=\"delete\" [selected]=\"selectedItemsMap.has('' + item[idField])\" (action)=\"onListItemAction($event)\"></mc-list-item>\n</div>\n",
-                styles: [":host{display:block;position:relative;height:100%;overflow:auto}"]
+                template: "<mc-list-item *ngFor=\"let item of data; trackBy: key\" [style.height]=\"horizontal ? '100%' : rowHeight + 'px'\" [style.lineHeight]=\"horizontal ? '' : (rowHeight - 2) + 'px'\"\n  [tpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\" [data]=\"item\" [hasCheckBox]=\"multiSelect\"\n  [hasDeleteButton]=\"delete\" [selected]=\"selectedItemsMap.has('' + item[idField])\" [class.horizontal]=\"horizontal\"\n  [theme]=\"item.theme\" [class.is-scroll-page-item]=\"isScrollPage\"\n  [class.is-first-page-item]=\"isFirstPage\" [class.is-last-page-item]=\"isLastPage\" (action)=\"onListItemAction($event)\">\n  </mc-list-item>",
+                styles: [":host{display:block;position:relative;height:100%;width:100%;overflow:auto;border:1px solid #e2e6ea;border-radius:3px}:host.horizontal{border:0;border-radius:0;display:inline-block;white-space:nowrap}:host.is-scroll-page{border:0}"]
             }] }
 ];
 /** @nocollapse */
@@ -94112,7 +94261,11 @@ ListBasicComponent.propDecorators = {
     data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     itemTpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
+    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    isLastPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    isFirstPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    isScrollPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.is-scroll-page',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    horizontal: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.horizontal',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }]
 };
 if (false) {}
 
@@ -94145,8 +94298,8 @@ class ListComponent extends ScrollAsyncComponent {
 ListComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-list',
-                template: "<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n",
-                styles: [":host{display:block;position:relative;height:100%}"]
+                template: "<mc-scroll #scrollCmp [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" [emptyText]=\"emptyText\" (updatePage)=\"onUpdatePage($event)\">\n  <ng-template #page1Tpl>\n    <mc-list-basic #listBasic1Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page1IsFirst\"\n      [isLastPage]=\"page1IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-list-basic #listBasic2Cmp [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [isScrollPage]=\"true\" [isFirstPage]=\"page2IsFirst\" [isLastPage]=\"page2IsLast\"\n      (action)=\"onAction($event)\">\n    </mc-list-basic>\n  </ng-template>\n</mc-scroll>\n",
+                styles: [":host{display:block;position:relative;height:100%;border:1px solid #e2e6ea;border-radius:3px;background-color:#fff}"]
             }] }
 ];
 /** @nocollapse */
@@ -94232,8 +94385,8 @@ class IconComponent extends BaseComponent {
 IconComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-icon',
-                template: '',
-                styles: ["@font-face{font-family:icons;src:url(../../assets/fonts/icon.eot);src:url(../../assets/fonts/icon.eot?#iefix) format(\"embedded-opentype\"),url(../../assets/fonts/icon.woff) format(\"woff\"),url(../../assets/fonts/icon.ttf) format(\"truetype\"),url(../../assets/fonts/icon.svg#icons) format(\"svg\");font-weight:400;font-style:normal}:host{display:inline-block;font-size:20px;color:silver;position:relative;cursor:pointer}:host:before{font-family:icons!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;position:relative}:host.icon-close:before{content:\"!\"}:host.icon-menu:before{content:'\"'}:host.icon-school:before{content:\"#\"}:host.icon-star-outline:before{content:\"$\"}:host.icon-label-outline:before{content:\"%\"}:host.icon-search:before{content:\"&\"}:host.icon-help-outline:before{content:\"'\"}"]
+                template: "",
+                styles: [":host{display:inline-block;font-size:20px;color:#23272b;position:relative;cursor:pointer}"]
             }] }
 ];
 /** @nocollapse */
@@ -94263,7 +94416,6 @@ class ListItemComponent extends BaseComponent {
         this.hasCheckBox = false;
         this.hasDeleteButton = false;
         this.selected = false;
-        this.height = '30px';
     }
     /**
      * @param {?} e
@@ -94295,7 +94447,7 @@ ListItemComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-list-item',
                 template: "<div *ngIf=\"hasCheckBox\" class=\"list-item--header\"><input type=\"checkbox\" [attr.data-id]=\"data[idField]\" data-action=\"check-checkbox\" checked=\"selected\" (change)=\"onChangeCheckbox($event)\"></div>\n<div class=\"list-item--body\">\n  <ng-container *ngTemplateOutlet=\"tpl; context: {$implicit: data}\"></ng-container>{{tpl ? '' : data[nameField]}}\n</div>\n<div *ngIf=\"hasDeleteButton\" class=\"list-item--footer\">\n  <mc-icon theme=\"trash\"></mc-icon>\n  <div class=\"list-item--yes-no\">\n    <div class=\"list-item--yes-no--yes\" data-action=\"do-delete\"><span class=\"list-item--yes-no--yes--text\">Delete</span>\n    </div>\n    <div class=\"list-item--yes-no--no\" data-action=\"cancel-delete\"><span\n        class=\"list-item--yes-no--no--text\">Cancel</span></div>\n  </div>\n</div>\n",
-                styles: [":host{display:inline-block;position:relative;cursor:pointer}"]
+                styles: [":host{display:inline-block;position:relative;cursor:pointer;padding:0 20px;width:100%;border-top:1px solid transparent;border-bottom:1px solid #e2e6ea}:host:last-child{border-bottom-color:transparent}:host.horizontal{width:auto;border-color:transparent}:host.horizontal.selected{margin-top:-1px;border-bottom:2px solid #343a40}:host.is-scroll-page-item:last-child{border-bottom-color:#e2e6ea}:host.is-scroll-page-item.is-last-page-item:last-child{border-bottom-color:transparent}:host.list-item-tag{margin-right:10px;padding:0 15px;font-size:9px;background-color:#343a40;color:#fff}:host.list-item-tag-orange{background-color:#f88300}:host.list-item-tag.selected{border-bottom:1px solid transparent}"]
             }] }
 ];
 /** @nocollapse */
@@ -94311,7 +94463,6 @@ ListItemComponent.propDecorators = {
     hasCheckBox: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     hasDeleteButton: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     selected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['class.selected',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    height: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"], args: ['style.height',] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     onPress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"], args: ['click', ['$event'],] }]
 };
 if (false) {}
@@ -94584,8 +94735,8 @@ class GridHeaderComponent extends BaseComponent {
 GridHeaderComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-grid-header',
-                template: "<table class=\"grid-header\">\n    <tr class=\"grid-header--row\" *ngFor=\"let cells of data;\" [style.height.px]=\"rowHeight\" >\n        <th class=\"grid-header--row--cell\" *ngFor=\"let cell of cells;\" [attr.data-id]=\"cell.id\" data-action=\"select-cell\" [colSpan]=\"cell.colspan || 1\" [rowSpan]=\"cell.rowspan || 1\">\n            <div class=\"grid-header--row--cell--content\" [style.lineHeight.px]=\"rowHeight\" [style.height.px]=\"rowHeight\" [style.width.px]=\"cell.width\" [title]=\"cell.name\"><ng-container *ngTemplateOutlet=\"cell.tpl; context: {$implicit: cell}\"></ng-container>{{cell.tpl ? '' : cell.name}}</div>\n        </th>\n    </tr>\n</table>\n",
-                styles: [":host{display:block;position:relative;height:auto;overflow-x:visible}:host .grid-header{border-collapse:collapse;border-spacing:0}:host .grid-header--row--cell{padding:0}:host .grid-header--row--cell--content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 10px}"]
+                template: "<table class=\"grid-header\">\n    <tr class=\"grid-header--row\" *ngFor=\"let cells of data;\" [style.height.px]=\"rowHeight\" >\n        <th class=\"grid-header--row--cell\" *ngFor=\"let cell of cells;\" [attr.data-id]=\"cell.id\" data-action=\"select-cell\" [colSpan]=\"cell.colspan || 1\" [rowSpan]=\"cell.rowspan || 1\">\n            <div class=\"grid-header--row--cell--content\" [style.lineHeight.px]=\"rowHeight - 2\" [style.height.px]=\"rowHeight - 2\" [style.width.px]=\"cell.width\" [title]=\"cell.name\"><ng-container *ngTemplateOutlet=\"cell.tpl; context: {$implicit: cell}\"></ng-container>{{cell.tpl ? '' : cell.name}}</div>\n        </th>\n    </tr>\n</table>\n",
+                styles: [":host{display:block;position:relative;height:auto;overflow-x:visible;border-top:1px solid transparent;border-bottom:1px solid #e2e6ea}:host .grid-header{border-collapse:collapse;border-spacing:0}:host .grid-header--row--cell{padding:0;cursor:pointer}:host .grid-header--row--cell--content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 10px}"]
             }] }
 ];
 /** @nocollapse */
@@ -94616,7 +94767,7 @@ class GridBodyComponent extends BaseComponent {
         this._service = _service;
         this.columnsChangeApplied = false;
         this.lastWidth = 0;
-        this.rowHeight = 30;
+        this.rowHeight = 45;
         this.idField = 'id';
     }
     /**
@@ -94685,7 +94836,7 @@ class GridBodyComponent extends BaseComponent {
     checkSize() {
         // emit width for prevent x scroll
         /** @type {?} */
-        const width = this.el.clientWidth;
+        const width = this.el.querySelector('.grid-body').clientWidth;
         if (width && this.lastWidth !== width) {
             this.lastWidth = width;
             this.action.emit({ action: 'update-width', target: this, width });
@@ -94695,8 +94846,8 @@ class GridBodyComponent extends BaseComponent {
 GridBodyComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-grid-body',
-                template: "<table class=\"grid-body\">\n    <tr *ngFor=\"let row of data; index as r\" class=\"grid-body--row\" [style.height.px]=\"rowHeight\" >\n        <td *ngFor=\"let column of columns; index as c;\" class=\"grid-body--row--cell\" [attr.data-field]=\"column.field\" [attr.data-id]=\"row[idField]\" [attr.data-rowIndex]=\"r\" [attr.data-cellIndex]=\"c\" data-action=\"select-cell\">\n            <div class=\"grid-body--row--cell--content\" [style.lineHeight.px]=\"rowHeight\" [style.height.px]=\"rowHeight\" [style.width.px]=\"column.width\" [title]=\"row[column.field]\"><ng-container *ngTemplateOutlet=\"column.tpl; context: {$implicit: row}\"></ng-container>{{column.tpl ? '' : row[column.field]}}</div>\n        </td>\n    </tr>\n</table>\n",
-                styles: [":host{display:block;position:relative;height:100%}:host .grid-body{border-collapse:collapse;border-spacing:0}:host .grid-body--row--cell{padding:0}:host .grid-body--row--cell--content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 10px}"]
+                template: "<table class=\"grid-body\">\n    <tr *ngFor=\"let row of data; index as r\" class=\"grid-body--row\" [style.height.px]=\"rowHeight\" >\n        <td *ngFor=\"let column of columns; index as c;\" class=\"grid-body--row--cell\" [attr.data-field]=\"column.field\" [attr.data-id]=\"row[idField]\" [attr.data-rowIndex]=\"r\" [attr.data-cellIndex]=\"c\" data-action=\"select-cell\">\n            <div class=\"grid-body--row--cell--content\" [style.lineHeight.px]=\"rowHeight - 2\" [style.height.px]=\"rowHeight - 2\" [style.width.px]=\"column.width\" [title]=\"row[column.field]\"><ng-container *ngTemplateOutlet=\"column.tpl; context: {$implicit: row}\"></ng-container>{{column.tpl ? '' : row[column.field]}}</div>\n        </td>\n    </tr>\n</table>\n",
+                styles: [":host{display:block;position:relative;height:100%;border:1px solid #e2e6ea;border-radius:3px}:host .grid-body{border-collapse:collapse;border-spacing:0}:host .grid-body--row{border-top:1px solid transparent;border-bottom:1px solid #e2e6ea}:host .grid-body--row--cell{padding:0;cursor:pointer}:host .grid-body--row--cell--content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 10px}:host.is-scroll-page{border:0}:host.is-scroll-page.is-last-page .grid-body--row:last-child{border-bottom-color:transparent}"]
             }] }
 ];
 /** @nocollapse */
@@ -94807,8 +94958,8 @@ class GridComponent extends ScrollAsyncComponent {
 GridComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-grid',
-                template: "<mc-grid-header [columns]=\"data.columns\" [data]=\"headerData\" [rowHeight]=\"rowHeight\"></mc-grid-header>\n<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\" (updatePage)=\"onUpdatePage($event)\" [style.height.px]=\"bodyHeight\" [style.width]=\"bodyWidth\">\n  <ng-template #page1Tpl>\n    <mc-grid-body [columns]=\"data.columns\" [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body [columns]=\"data.columns\" [rowHeight]=\"rowHeight\" [data]=\"page2Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n",
-                styles: [":host{display:block;position:relative;height:100%;overflow-x:auto}"]
+                template: "<mc-grid-header [columns]=\"data.columns\" [data]=\"headerData\" [rowHeight]=\"rowHeight\" [style.width]=\"bodyWidth\">\n</mc-grid-header>\n<mc-scroll [page1Tpl]=\"page1Tpl\" [page2Tpl]=\"page2Tpl\" [rowHeight]=\"rowHeight\" [rowCount]=\"rowCount\"\n  [isLoading]=\"isLoading\"  [emptyText]=\"emptyText\" (updatePage)=\"onUpdatePage($event)\" [style.height.px]=\"bodyHeight\" [style.width]=\"bodyWidth\">\n  <ng-template #page1Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page1IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page1Data\" [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n  <ng-template #page2Tpl>\n    <mc-grid-body [class.is-scroll-page]=\"true\" [class.is-last-page]=\"page2IsLast\" [columns]=\"data.columns\"\n      [rowHeight]=\"rowHeight\" [data]=\"page2Data\"\n      [idField]=\"idField\"\n      (action)=\"onAction($event)\">\n    </mc-grid-body>\n  </ng-template>\n</mc-scroll>\n",
+                styles: [":host{display:block;position:relative;height:100%;overflow-x:auto;border:1px solid #e2e6ea;border-radius:3px}"]
             }] }
 ];
 /** @nocollapse */
@@ -94840,11 +94991,14 @@ class PopupComponent extends BaseComponent {
         // for body press event, it is triggered after clicking the target. We need to ignore the body event when visible = true;
         this.bodyEventLock = false;
         this.indicatorHeight = 10;
+        this.indicatorLocation = 'bl'; // 'tl' | 'tr' | 'bl' | 'br' = 'bl'
+        // 'tl' | 'tr' | 'bl' | 'br' = 'bl'
         this.checkTargetLocation = false;
         // top left is the base state.
         this.startFrom = 'center';
         this.offsetX = 0;
         this.offsetY = 0;
+        this.useTargetWidth = false;
         this.tpl = null;
         this.hided = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.center = false;
@@ -94920,6 +95074,8 @@ class PopupComponent extends BaseComponent {
         // renew check.
         this.uncheckTargetLocation();
         this.checkTargetElLocation();
+        // for updating the last size;
+        this.lastTargetElCoord = this.targetEl.getBoundingClientRect();
         this.el.style.visibility = 'hidden';
         this.el.style.display = '';
         // after the targetEl is changed.
@@ -94944,7 +95100,8 @@ class PopupComponent extends BaseComponent {
             /** @type {?} */
             const left = isLeft ? targetSize.left + (this.startFrom === 'center' ? targetSize.width / 2 : 0) + this.offsetX : targetSize.left - popupSize.width + (this.startFrom === 'center' ? targetSize.width / 2 : targetSize.width) - this.offsetX;
             /** @type {?} */
-            const top = isTop ? targetSize.top + targetSize.height + this.offsetY + indicatorHeight : targetSize.top - popupSize.height - this.offsetY - indicatorHeight;
+            const top = isTop ? targetSize.top + (this.startFrom === 'overlap' ? 0 : targetSize.height) + this.offsetY + indicatorHeight : targetSize.top - popupSize.height - this.offsetY - indicatorHeight + (this.startFrom === 'overlap' ? targetSize.height : 0);
+            this.indicatorLocation = (isTop ? 't' : 'b') + (isLeft ? 'l' : 'r');
             this.el.style.left = left + 'px';
             this.el.style.top = top + 'px';
             // remove the prev indicator and add the new indicator
@@ -95045,6 +95202,7 @@ PopupComponent.propDecorators = {
     startFrom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     offsetX: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     offsetY: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    useTargetWidth: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     tpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     targetEl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     visible: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
@@ -95068,31 +95226,31 @@ class PopupListComponent extends PopupComponent {
         super(er, service);
         this.er = er;
         this.service = service;
-        this.listHeight = 300;
+        this.keyword = '';
+        // for displaying the selections.
         this.popupSelectedItems = [];
+        this.listSelectedItems = [];
+        this.lastSelectedName = '';
+        this.listHeight = 300;
+        this.rowHeight = 45;
         this.multiSelect = false;
         // popup
         this.height = 350;
-        this.startFrom = 'start';
-        this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.startFrom = 'overlap';
         this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.filterDebounce = this.util.debounce(this.filter, 300, this);
     }
+    // read only
     /**
      * @param {?} value
      * @return {?}
      */
     set selectedItems(value) {
         if (value) {
-            // input only
             this.popupSelectedItems = value.concat();
+            this.listSelectedItems = value.concat();
+            this.lastSelectedItem = value.length ? value[0] : null;
         }
-    }
-    /**
-     * @return {?}
-     */
-    get selectedItems() {
-        return this._selectedItems;
     }
     /**
      * @param {?} value
@@ -95101,6 +95259,7 @@ class PopupListComponent extends PopupComponent {
     set data(value) {
         // input only
         this._data = value;
+        // console.log('update popup list data', value);
         // update list for calculating scroll height after updating header height.
         setTimeout((/**
          * @return {?}
@@ -95116,8 +95275,28 @@ class PopupListComponent extends PopupComponent {
     /**
      * @return {?}
      */
+    getInputCmp() {
+        return this.indicatorLocation[0] === 't' ? this.inputCmp1 : this.inputCmp2;
+    }
+    /**
+     * @return {?}
+     */
     show() {
+        // init filter
+        if (this.keyword) {
+            this.filter('');
+        }
+        this.updateLastSelectedItemName();
         super.show();
+        setTimeout((/**
+         * @return {?}
+         */
+        () => {
+            // focus
+            /** @type {?} */
+            const inputCmp = this.getInputCmp();
+            inputCmp.focus();
+        }));
     }
     /**
      * @param {?} keyword
@@ -95125,24 +95304,37 @@ class PopupListComponent extends PopupComponent {
      */
     filter(keyword) {
         if (keyword !== this.keyword) {
+            this.keyword = keyword;
+            // it can assign 2 times but it is the same value, so it is not infinity loop.
+            this.lastSelectedName = keyword;
             this.needData.emit({
                 target: this,
+                action: 'filter',
                 keyword
             });
         }
+    }
+    /**
+     * @return {?}
+     */
+    updateLastSelectedItemName() {
+        this.lastSelectedName = this.lastSelectedItem ? this.lastSelectedItem[this.nameField] : '';
     }
     /**
      * @param {?} e
      * @return {?}
      */
     onValueChange(e) {
-        this.filterDebounce(e.value);
+        // console.log('valueChange', e);
+        if (e.by === 'keyboard') {
+            this.filterDebounce(e.value);
+        }
     }
     /**
      * @param {?} item
      * @return {?}
      */
-    onClicUnselectButton(item) {
+    onClickUnselectButton(item) {
         this.listCmp.unselectItem(item);
     }
     /**
@@ -95153,28 +95345,37 @@ class PopupListComponent extends PopupComponent {
         switch (e.action) {
             case 'unselect-item':
             case 'select-item':
-                // update popup selected item
-                if (e.action === 'select-item') {
-                    this.popupSelectedItems.push(e.item);
+                // for display the selections.
+                this.popupSelectedItems = e.selectedItems.concat();
+                if (!this.multiSelect) {
+                    this.visible = false;
                 }
-                else {
-                    this.popupSelectedItems = this.popupSelectedItems.filter((/**
-                     * @param {?} d
-                     * @return {?}
-                     */
-                    d => d[this.idField] + '' !== e.item[this.idField] + ''));
-                }
-                e.target = this;
-                this.action.emit(e);
+                this.lastSelectedItem = e.selectedItem;
                 break;
         }
+        e.target = this;
+        this.action.emit(e);
+    }
+    /**
+     * @param {?} e
+     * @return {?}
+     */
+    onListNeedData(e) {
+        e.target = this;
+        this.needData.emit(e);
+    }
+    /**
+     * @return {?}
+     */
+    onClickListBody() {
+        this.visible = false;
     }
 }
 PopupListComponent.decorators = [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
                 selector: 'mc-popup-list',
-                template: "<div class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\" [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input (valueChange)=\"onValueChange($event)\"></mc-input>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClicUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n  [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"selectedItems\"\n  [additionalData]=\"additionalData\" (action)=\"onListAction($event)\" [style.height.px]=\"listHeight\">\n</mc-list>\n",
-                styles: [":host{position:absolute;display:inline-block;background-color:#fff}:host.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}:host.popup-basic{border:1px solid silver;padding:20px}:host.popup-indicator:before{content:\"\";width:17px;height:4px;position:absolute;background:#fff;z-index:2}:host.popup-indicator:after{content:\"\";width:16px;height:12px;position:absolute;z-index:1;background-color:#fff}:host.popup-indicator-top-right:before{transform:rotate(-35deg);top:-6px;right:-1px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-right:after{top:-9px;right:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-top-left:before{transform:scale(-1,1) rotate(-35deg);left:-1px;top:-6px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-left:after{transform:scale(-1,1);top:-9px;left:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-bottom-right:before{transform:scale(-1,1) rotate(-35deg);right:-1px;bottom:-6px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-right:after{transform:scale(-1,1);right:-1px;bottom:-9px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:before{transform:rotate(-35deg);bottom:-6px;left:-1px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:after{bottom:-9px;left:-1px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-audit{width:250px;padding:15px;border:1px solid #12102e}", ":host{display:block;position:absolute;width:100%;height:100%}"]
+                template: "<div *ngIf=\"indicatorLocation[0] === 't'\" class=\"popup-list--header\">\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp1 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"popup-list--body\" [style.height.px]=\"listHeight\" [class.popup-list--body-t]=\"indicatorLocation[0] !== 't'\" (click)=\"onClickListBody();\">\n  <mc-list #listCmp [data]=\"listData\" [itemTpl]=\"itemTpl\" [idField]=\"idField\" [nameField]=\"nameField\"\n    [rowHeight]=\"rowHeight\" [multiSelect]=\"multiSelect\" [selectedItems]=\"listSelectedItems\"\n    [additionalData]=\"additionalData\" (needData)=\"onListNeedData($event)\" (action)=\"onListAction($event)\"\n    [style.height.px]=\"listHeight\">\n  </mc-list>\n</div>\n<div *ngIf=\"indicatorLocation[0] !== 't'\" class=\"popup-list--header\">\n  <div *ngIf=\"multiSelect\" class=\"popup-list--header--selected-items\">\n    <div *ngFor=\"let item of popupSelectedItems\" class=\"popup-list--header--selected-items--item\">\n      <div class=\"popup-list--header--selected-items--item--name\">{{item[nameField]}}</div>\n      <div class=\"popup-list--header--selected-items--item--delete\">\n        <mc-button theme=\"icon\" (click)=\"onClickUnselectButton(item)\">\n          <mc-icon [theme]=\"['close', 'button']\"></mc-icon>\n        </mc-button>\n      </div>\n    </div>\n  </div>\n  <div class=\"popup-list--header--input\" [style.width.px]=\"lastTargetElCoord.width\"\n    [style.height.px]=\"lastTargetElCoord.height\">\n    <mc-input #inputCmp2 class=\"popup-list--header--input--input\" [value]=\"lastSelectedName\"\n      (valueChange)=\"onValueChange($event)\"></mc-input>\n    <div class=\"popup-list--header--input--icon\">\n      <mc-icon theme=\"down\"></mc-icon>\n    </div>\n  </div>\n</div>\n",
+                styles: [":host{position:absolute;display:inline-block;background-color:#fff}:host.center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}:host.popup-basic{border:1px solid silver;padding:20px}:host.popup-indicator:before{content:\"\";width:17px;height:4px;position:absolute;background:#fff;z-index:2}:host.popup-indicator:after{content:\"\";width:16px;height:12px;position:absolute;z-index:1;background-color:#fff}:host.popup-indicator-top-right:before{transform:rotate(-35deg);top:-6px;right:-1px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-right:after{top:-9px;right:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-top-left:before{transform:scale(-1,1) rotate(-35deg);left:-1px;top:-6px;border-radius:0 4px 0 0;border-top:1px solid #12102e;border-right:1px solid #12102e}:host.popup-indicator-top-left:after{transform:scale(-1,1);top:-9px;left:-1px;border-radius:0 4px 0 0;border-right:1px solid #12102e}:host.popup-indicator-bottom-right:before{transform:scale(-1,1) rotate(-35deg);right:-1px;bottom:-6px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-right:after{transform:scale(-1,1);right:-1px;bottom:-9px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:before{transform:rotate(-35deg);bottom:-6px;left:-1px;border-radius:0 0 0 4px;border-bottom:1px solid #12102e;border-left:1px solid #12102e}:host.popup-indicator-bottom-left:after{bottom:-9px;left:-1px;border-radius:0 0 0 4px;border-left:1px solid #12102e}:host.popup-audit{width:250px;padding:15px;border:1px solid #12102e}", ":host{background-color:transparent}:host .popup-list--header--input--icon{position:absolute;right:10px;top:0;line-height:43px}:host .popup-list--body-t{background-color:transparent}:host .popup-list--body-t mc-list{position:absolute;width:100%;bottom:0}"]
             }] }
 ];
 /** @nocollapse */
@@ -95184,6 +95385,9 @@ PopupListComponent.ctorParameters = () => [
 ];
 PopupListComponent.propDecorators = {
     listCmp: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['listCmp', { static: false },] }],
+    inputCmp1: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['inputCmp1', { static: false },] }],
+    inputCmp2: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"], args: ['inputCmp2', { static: false },] }],
+    listHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     itemTpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
@@ -95194,8 +95398,171 @@ PopupListComponent.propDecorators = {
     additionalData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     height: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
     startFrom: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
-    valueChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
     needData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }]
+};
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/component/form/field/dropdown/dropdown.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class DropdownComponent extends FieldBaseComponent {
+    /**
+     * @param {?} er
+     * @param {?} service
+     */
+    constructor(er, service) {
+        super(er, service);
+        this.er = er;
+        this.service = service;
+        this._selectedItems = [];
+        this.emptyText = 'Select...';
+        this.idField = 'id';
+        this.nameField = 'name';
+        this.rowHeight = 45;
+        this.multiSelect = false;
+        this.needData = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        // ***************************************
+        this.summary = this.emptyText;
+    }
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    set data(value) {
+        if (value) {
+            this._data = value;
+            this.updatePopupListData(value);
+        }
+    }
+    /**
+     * @return {?}
+     */
+    get data() {
+        return this._data;
+    }
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    set selectedItems(value) {
+        if (value) {
+            this._selectedItems = value;
+            this.updateSummary(value);
+        }
+    }
+    /**
+     * @return {?}
+     */
+    get selectedItems() {
+        return this._selectedItems;
+    }
+    /**
+     * @param {?} e
+     * @return {?}
+     */
+    onPress(e) {
+        this.showPopupList();
+    }
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    updateSummary(value) {
+        this.summary = value.length ? value.map((/**
+         * @param {?} val
+         * @return {?}
+         */
+        val => val[this.nameField])).join(', ') : this.emptyText;
+    }
+    /**
+     * @param {?} data
+     * @return {?}
+     */
+    updatePopupListData(data) {
+        if (data && this.popupListCmp) {
+            this.popupListCmp.instance.data = data;
+        }
+    }
+    /**
+     * @return {?}
+     */
+    showPopupList() {
+        /** @type {?} */
+        let instance = this.popupListCmp ? this.popupListCmp.instance : null;
+        if (!this.popupListCmp) {
+            // add to root
+            this.popupListCmp = this.service.addComponent(PopupListComponent);
+            instance = this.popupListCmp.instance;
+            instance.data = this.data;
+            instance.checkTargetLocation = true;
+            instance.itemTpl = this.itemTpl;
+            instance.idField = this.idField;
+            instance.nameField = this.nameField;
+            instance.rowHeight = this.rowHeight;
+            instance.multiSelect = this.multiSelect;
+            instance.selectedItems = this.selectedItems.concat();
+            instance.additionalData = this.additionalData;
+            instance.targetEl = this.el;
+            this.subscriptions = instance.needData.subscribe((/**
+             * @param {?} e
+             * @return {?}
+             */
+            e => {
+                e.target = this;
+                this.needData.emit(e);
+            }));
+            this.subscriptions = instance.action.subscribe((/**
+             * @param {?} e
+             * @return {?}
+             */
+            e => {
+                e.target = this;
+                switch (e.action) {
+                    case 'unselect-item':
+                    case 'select-item':
+                        this.selectedItems = e.selectedItems;
+                        break;
+                }
+                this.action.emit(e);
+            }));
+        }
+        instance.visible = !instance.visible;
+    }
+    /**
+     * @return {?}
+     */
+    destroyCmp() {
+        if (this.popupListCmp) {
+            this.service.removeComponent(this.popupListCmp);
+        }
+    }
+}
+DropdownComponent.decorators = [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"], args: [{
+                selector: 'mc-dropdown',
+                template: "<div class=\"dropdown--summary\">\n  {{summary}}\n</div>\n<div class=\"dropdown--icon\">\n  <mc-icon theme=\"down\"></mc-icon>\n</div>\n",
+                styles: [":host{display:block;border:1px solid #e2e6ea;cursor:pointer;line-height:43px;padding:0 20px;border-radius:3px}:host .dropdown{padding-right:20px}:host .dropdown--icon{position:absolute;right:10px;top:0}"]
+            }] }
+];
+/** @nocollapse */
+DropdownComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] },
+    { type: MCUIService }
+];
+DropdownComponent.propDecorators = {
+    emptyText: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    itemTpl: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    idField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    nameField: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    rowHeight: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    multiSelect: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    selectedItems: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    additionalData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"] }],
+    needData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"] }],
+    onPress: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"], args: ['click', ['$event'],] }]
 };
 if (false) {}
 
@@ -95232,7 +95599,8 @@ MCUIModule.decorators = [
                     GridComponent,
                     MaskComponent,
                     PopupComponent,
-                    PopupListComponent
+                    PopupListComponent,
+                    DropdownComponent
                 ],
                 entryComponents: [
                     PopupComponent,
@@ -95260,7 +95628,8 @@ MCUIModule.decorators = [
                     GridComponent,
                     MaskComponent,
                     PopupComponent,
-                    PopupListComponent
+                    PopupListComponent,
+                    DropdownComponent
                 ],
                 providers: [MCUIService]
             },] }
