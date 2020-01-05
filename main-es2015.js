@@ -829,6 +829,11 @@ let ExampleComponent = class ExampleComponent extends _index__WEBPACK_IMPORTED_M
                 id: '../../../assets/mp3/BehavioralInterviewStar.mp3',
                 name: 'Behavioral Interview STAR',
                 date: '12/18/2019'
+            },
+            {
+                id: '../../../assets/mp3/BigO.mp3',
+                name: 'Big O',
+                date: '01/04/2020'
             }];
     }
 };
@@ -1154,7 +1159,7 @@ HomeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************!*\
   !*** ./src/app/home/index.ts ***!
   \*******************************/
-/*! exports provided: HomeHeaderComponent, HomeComponent, HomeService */
+/*! exports provided: HomeService, HomeHeaderComponent, HomeComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

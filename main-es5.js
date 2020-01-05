@@ -841,6 +841,11 @@ var __extends = (this && this.__extends) || (function () {
                             id: '../../../assets/mp3/BehavioralInterviewStar.mp3',
                             name: 'Behavioral Interview STAR',
                             date: '12/18/2019'
+                        },
+                        {
+                            id: '../../../assets/mp3/BigO.mp3',
+                            name: 'Big O',
+                            date: '01/04/2020'
                         }];
                     return _this;
                 }
@@ -1124,7 +1129,7 @@ var __extends = (this && this.__extends) || (function () {
         /*!*******************************!*\
           !*** ./src/app/home/index.ts ***!
           \*******************************/
-        /*! exports provided: HomeHeaderComponent, HomeComponent, HomeService */
+        /*! exports provided: HomeService, HomeHeaderComponent, HomeComponent */
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
