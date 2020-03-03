@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵsetRootDomAdapter", function() { return setRootDomAdapter; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /**
- * @license Angular v9.0.0
+ * @license Angular v9.0.4
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -3910,7 +3910,7 @@ class NgForOf {
             // TODO(vicb): use a log service once there is a public one available
             if ((/** @type {?} */ (console)) && (/** @type {?} */ (console.warn))) {
                 console.warn(`trackBy must be a function, but received ${JSON.stringify(fn)}. ` +
-                    `See https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html#!#change-propagation for more information.`);
+                    `See https://angular.io/api/common/NgForOf#change-propagation for more information.`);
             }
         }
         this._trackByFn = fn;
@@ -6474,7 +6474,7 @@ function isPlatformWorkerUi(platformId) {
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('9.0.0');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('9.0.4');
 
 /**
  * @fileoverview added by tsickle
@@ -6751,7 +6751,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /**
- * @license Angular v9.0.0
+ * @license Angular v9.0.4
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -9456,7 +9456,7 @@ HttpClientJsonpModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
 /*!******************************************************************!*\
   !*** ./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js ***!
   \******************************************************************/
-/*! exports provided: ANALYZE_FOR_ENTRY_COMPONENTS, APP_BOOTSTRAP_LISTENER, APP_ID, APP_INITIALIZER, ApplicationInitStatus, ApplicationModule, ApplicationRef, Attribute, COMPILER_OPTIONS, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, ChangeDetectorRef, Compiler, CompilerFactory, Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, ContentChild, ContentChildren, DEFAULT_CURRENCY_CODE, DebugElement, DebugEventListener, DebugNode, DefaultIterableDiffer, Directive, ElementRef, EmbeddedViewRef, ErrorHandler, EventEmitter, Host, HostBinding, HostListener, INJECTOR, Inject, InjectFlags, Injectable, InjectionToken, Injector, Input, IterableDiffers, KeyValueDiffers, LOCALE_ID, MissingTranslationStrategy, ModuleWithComponentFactories, NO_ERRORS_SCHEMA, NgModule, NgModuleFactory, NgModuleFactoryLoader, NgModuleRef, NgProbeToken, NgZone, Optional, Output, PACKAGE_ROOT_URL, PLATFORM_ID, PLATFORM_INITIALIZER, Pipe, PlatformRef, Query, QueryList, ReflectiveInjector, ReflectiveKey, Renderer2, RendererFactory2, RendererStyleFlags2, ResolvedReflectiveFactory, Sanitizer, SecurityContext, Self, SimpleChange, SkipSelf, SystemJsNgModuleLoader, SystemJsNgModuleLoaderConfig, TRANSLATIONS, TRANSLATIONS_FORMAT, TemplateRef, Testability, TestabilityRegistry, Type, VERSION, Version, ViewChild, ViewChildren, ViewContainerRef, ViewEncapsulation, ViewRef, WrappedValue, asNativeElements, assertPlatform, createPlatform, createPlatformFactory, defineInjectable, destroyPlatform, enableProdMode, forwardRef, getDebugNode, getModuleFactory, getPlatform, inject, isDevMode, platformCore, resolveForwardRef, setTestabilityGetter, ɵALLOW_MULTIPLE_PLATFORMS, ɵAPP_ID_RANDOM_PROVIDER, ɵChangeDetectorStatus, ɵCodegenComponentFactoryResolver, ɵCompiler_compileModuleAndAllComponentsAsync__POST_R3__, ɵCompiler_compileModuleAndAllComponentsSync__POST_R3__, ɵCompiler_compileModuleAsync__POST_R3__, ɵCompiler_compileModuleSync__POST_R3__, ɵComponentFactory, ɵConsole, ɵDEFAULT_LOCALE_ID, ɵEMPTY_ARRAY, ɵEMPTY_MAP, ɵINJECTOR_IMPL__POST_R3__, ɵINJECTOR_SCOPE, ɵLifecycleHooksFeature, ɵLocaleDataIndex, ɵNG_COMP_DEF, ɵNG_DIR_DEF, ɵNG_ELEMENT_ID, ɵNG_INJ_DEF, ɵNG_MOD_DEF, ɵNG_PIPE_DEF, ɵNG_PROV_DEF, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR, ɵNO_CHANGE, ɵNgModuleFactory, ɵNoopNgZone, ɵReflectionCapabilities, ɵRender3ComponentFactory, ɵRender3ComponentRef, ɵRender3NgModuleRef, ɵSWITCH_CHANGE_DETECTOR_REF_FACTORY__POST_R3__, ɵSWITCH_COMPILE_COMPONENT__POST_R3__, ɵSWITCH_COMPILE_DIRECTIVE__POST_R3__, ɵSWITCH_COMPILE_INJECTABLE__POST_R3__, ɵSWITCH_COMPILE_NGMODULE__POST_R3__, ɵSWITCH_COMPILE_PIPE__POST_R3__, ɵSWITCH_ELEMENT_REF_FACTORY__POST_R3__, ɵSWITCH_IVY_ENABLED__POST_R3__, ɵSWITCH_RENDERER2_FACTORY__POST_R3__, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__, ɵSWITCH_VIEW_CONTAINER_REF_FACTORY__POST_R3__, ɵ_sanitizeHtml, ɵ_sanitizeStyle, ɵ_sanitizeUrl, ɵallowSanitizationBypassAndThrow, ɵand, ɵangular_packages_core_core_a, ɵangular_packages_core_core_b, ɵangular_packages_core_core_ba, ɵangular_packages_core_core_bb, ɵangular_packages_core_core_bc, ɵangular_packages_core_core_bd, ɵangular_packages_core_core_bf, ɵangular_packages_core_core_bg, ɵangular_packages_core_core_bh, ɵangular_packages_core_core_bi, ɵangular_packages_core_core_bj, ɵangular_packages_core_core_bk, ɵangular_packages_core_core_bl, ɵangular_packages_core_core_bm, ɵangular_packages_core_core_bn, ɵangular_packages_core_core_bp, ɵangular_packages_core_core_bq, ɵangular_packages_core_core_c, ɵangular_packages_core_core_d, ɵangular_packages_core_core_e, ɵangular_packages_core_core_f, ɵangular_packages_core_core_g, ɵangular_packages_core_core_h, ɵangular_packages_core_core_i, ɵangular_packages_core_core_j, ɵangular_packages_core_core_k, ɵangular_packages_core_core_l, ɵangular_packages_core_core_m, ɵangular_packages_core_core_n, ɵangular_packages_core_core_o, ɵangular_packages_core_core_p, ɵangular_packages_core_core_q, ɵangular_packages_core_core_r, ɵangular_packages_core_core_s, ɵangular_packages_core_core_t, ɵangular_packages_core_core_u, ɵangular_packages_core_core_v, ɵangular_packages_core_core_w, ɵangular_packages_core_core_x, ɵangular_packages_core_core_y, ɵangular_packages_core_core_z, ɵbypassSanitizationTrustHtml, ɵbypassSanitizationTrustResourceUrl, ɵbypassSanitizationTrustScript, ɵbypassSanitizationTrustStyle, ɵbypassSanitizationTrustUrl, ɵccf, ɵclearOverrides, ɵclearResolutionOfComponentResourcesQueue, ɵcmf, ɵcompileComponent, ɵcompileDirective, ɵcompileNgModule, ɵcompileNgModuleDefs, ɵcompileNgModuleFactory__POST_R3__, ɵcompilePipe, ɵcreateInjector, ɵcrt, ɵdefaultIterableDiffers, ɵdefaultKeyValueDiffers, ɵdetectChanges, ɵdevModeEqual, ɵdid, ɵeld, ɵfindLocaleData, ɵflushModuleScopingQueueAsMuchAsPossible, ɵgetComponentViewDefinitionFactory, ɵgetDebugNodeR2, ɵgetDebugNode__POST_R3__, ɵgetDirectives, ɵgetHostElement, ɵgetInjectableDef, ɵgetLContext, ɵgetLocaleCurrencyCode, ɵgetLocalePluralCase, ɵgetModuleFactory__POST_R3__, ɵgetSanitizationBypassType, ɵglobal, ɵinitServicesIfNeeded, ɵinlineInterpolate, ɵinterpolate, ɵisBoundToModule__POST_R3__, ɵisDefaultChangeDetectionStrategy, ɵisListLikeIterable, ɵisObservable, ɵisPromise, ɵivyEnabled, ɵlooseIdentical, ɵmakeDecorator, ɵmarkDirty, ɵmod, ɵmpd, ɵncd, ɵnov, ɵoverrideComponentView, ɵoverrideProvider, ɵpad, ɵpatchComponentDefWithScope, ɵpid, ɵpod, ɵppd, ɵprd, ɵpublishDefaultGlobalUtils, ɵpublishGlobalUtil, ɵqud, ɵregisterLocaleData, ɵregisterModuleFactory, ɵregisterNgModuleType, ɵrenderComponent, ɵresetCompiledComponents, ɵresolveComponentResources, ɵsetClassMetadata, ɵsetCurrentInjector, ɵsetDocument, ɵsetLocaleId, ɵstore, ɵstringify, ɵted, ɵtransitiveScopesFor, ɵunregisterLocaleData, ɵunv, ɵunwrapSafeValue, ɵvid, ɵwhenRendered, ɵɵCopyDefinitionFeature, ɵɵInheritDefinitionFeature, ɵɵNgOnChangesFeature, ɵɵProvidersFeature, ɵɵadvance, ɵɵattribute, ɵɵattributeInterpolate1, ɵɵattributeInterpolate2, ɵɵattributeInterpolate3, ɵɵattributeInterpolate4, ɵɵattributeInterpolate5, ɵɵattributeInterpolate6, ɵɵattributeInterpolate7, ɵɵattributeInterpolate8, ɵɵattributeInterpolateV, ɵɵclassMap, ɵɵclassMapInterpolate1, ɵɵclassMapInterpolate2, ɵɵclassMapInterpolate3, ɵɵclassMapInterpolate4, ɵɵclassMapInterpolate5, ɵɵclassMapInterpolate6, ɵɵclassMapInterpolate7, ɵɵclassMapInterpolate8, ɵɵclassMapInterpolateV, ɵɵclassProp, ɵɵcomponentHostSyntheticListener, ɵɵcontainer, ɵɵcontainerRefreshEnd, ɵɵcontainerRefreshStart, ɵɵcontentQuery, ɵɵdefaultStyleSanitizer, ɵɵdefineComponent, ɵɵdefineDirective, ɵɵdefineInjectable, ɵɵdefineInjector, ɵɵdefineNgModule, ɵɵdefinePipe, ɵɵdirectiveInject, ɵɵdisableBindings, ɵɵelement, ɵɵelementContainer, ɵɵelementContainerEnd, ɵɵelementContainerStart, ɵɵelementEnd, ɵɵelementStart, ɵɵembeddedViewEnd, ɵɵembeddedViewStart, ɵɵenableBindings, ɵɵgetCurrentView, ɵɵgetFactoryOf, ɵɵgetInheritedFactory, ɵɵhostProperty, ɵɵi18n, ɵɵi18nApply, ɵɵi18nAttributes, ɵɵi18nEnd, ɵɵi18nExp, ɵɵi18nPostprocess, ɵɵi18nStart, ɵɵinject, ɵɵinjectAttribute, ɵɵinjectPipeChangeDetectorRef, ɵɵinvalidFactory, ɵɵinvalidFactoryDep, ɵɵlistener, ɵɵloadQuery, ɵɵnamespaceHTML, ɵɵnamespaceMathML, ɵɵnamespaceSVG, ɵɵnextContext, ɵɵpipe, ɵɵpipeBind1, ɵɵpipeBind2, ɵɵpipeBind3, ɵɵpipeBind4, ɵɵpipeBindV, ɵɵprojection, ɵɵprojectionDef, ɵɵproperty, ɵɵpropertyInterpolate, ɵɵpropertyInterpolate1, ɵɵpropertyInterpolate2, ɵɵpropertyInterpolate3, ɵɵpropertyInterpolate4, ɵɵpropertyInterpolate5, ɵɵpropertyInterpolate6, ɵɵpropertyInterpolate7, ɵɵpropertyInterpolate8, ɵɵpropertyInterpolateV, ɵɵpureFunction0, ɵɵpureFunction1, ɵɵpureFunction2, ɵɵpureFunction3, ɵɵpureFunction4, ɵɵpureFunction5, ɵɵpureFunction6, ɵɵpureFunction7, ɵɵpureFunction8, ɵɵpureFunctionV, ɵɵqueryRefresh, ɵɵreference, ɵɵresolveBody, ɵɵresolveDocument, ɵɵresolveWindow, ɵɵrestoreView, ɵɵsanitizeHtml, ɵɵsanitizeResourceUrl, ɵɵsanitizeScript, ɵɵsanitizeStyle, ɵɵsanitizeUrl, ɵɵsanitizeUrlOrResourceUrl, ɵɵselect, ɵɵsetComponentScope, ɵɵsetNgModuleScope, ɵɵstaticContentQuery, ɵɵstaticViewQuery, ɵɵstyleMap, ɵɵstyleProp, ɵɵstylePropInterpolate1, ɵɵstylePropInterpolate2, ɵɵstylePropInterpolate3, ɵɵstylePropInterpolate4, ɵɵstylePropInterpolate5, ɵɵstylePropInterpolate6, ɵɵstylePropInterpolate7, ɵɵstylePropInterpolate8, ɵɵstylePropInterpolateV, ɵɵstyleSanitizer, ɵɵtemplate, ɵɵtemplateRefExtractor, ɵɵtext, ɵɵtextInterpolate, ɵɵtextInterpolate1, ɵɵtextInterpolate2, ɵɵtextInterpolate3, ɵɵtextInterpolate4, ɵɵtextInterpolate5, ɵɵtextInterpolate6, ɵɵtextInterpolate7, ɵɵtextInterpolate8, ɵɵtextInterpolateV, ɵɵupdateSyntheticHostBinding, ɵɵviewQuery */
+/*! exports provided: ANALYZE_FOR_ENTRY_COMPONENTS, APP_BOOTSTRAP_LISTENER, APP_ID, APP_INITIALIZER, ApplicationInitStatus, ApplicationModule, ApplicationRef, Attribute, COMPILER_OPTIONS, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, ChangeDetectorRef, Compiler, CompilerFactory, Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, ContentChild, ContentChildren, DEFAULT_CURRENCY_CODE, DebugElement, DebugEventListener, DebugNode, DefaultIterableDiffer, Directive, ElementRef, EmbeddedViewRef, ErrorHandler, EventEmitter, Host, HostBinding, HostListener, INJECTOR, Inject, InjectFlags, Injectable, InjectionToken, Injector, Input, IterableDiffers, KeyValueDiffers, LOCALE_ID, MissingTranslationStrategy, ModuleWithComponentFactories, NO_ERRORS_SCHEMA, NgModule, NgModuleFactory, NgModuleFactoryLoader, NgModuleRef, NgProbeToken, NgZone, Optional, Output, PACKAGE_ROOT_URL, PLATFORM_ID, PLATFORM_INITIALIZER, Pipe, PlatformRef, Query, QueryList, ReflectiveInjector, ReflectiveKey, Renderer2, RendererFactory2, RendererStyleFlags2, ResolvedReflectiveFactory, Sanitizer, SecurityContext, Self, SimpleChange, SkipSelf, SystemJsNgModuleLoader, SystemJsNgModuleLoaderConfig, TRANSLATIONS, TRANSLATIONS_FORMAT, TemplateRef, Testability, TestabilityRegistry, Type, VERSION, Version, ViewChild, ViewChildren, ViewContainerRef, ViewEncapsulation, ViewRef, WrappedValue, asNativeElements, assertPlatform, createPlatform, createPlatformFactory, defineInjectable, destroyPlatform, enableProdMode, forwardRef, getDebugNode, getModuleFactory, getPlatform, inject, isDevMode, platformCore, resolveForwardRef, setTestabilityGetter, ɵALLOW_MULTIPLE_PLATFORMS, ɵAPP_ID_RANDOM_PROVIDER, ɵChangeDetectorStatus, ɵCodegenComponentFactoryResolver, ɵCompiler_compileModuleAndAllComponentsAsync__POST_R3__, ɵCompiler_compileModuleAndAllComponentsSync__POST_R3__, ɵCompiler_compileModuleAsync__POST_R3__, ɵCompiler_compileModuleSync__POST_R3__, ɵComponentFactory, ɵConsole, ɵDEFAULT_LOCALE_ID, ɵEMPTY_ARRAY, ɵEMPTY_MAP, ɵINJECTOR_IMPL__POST_R3__, ɵINJECTOR_SCOPE, ɵLifecycleHooksFeature, ɵLocaleDataIndex, ɵNG_COMP_DEF, ɵNG_DIR_DEF, ɵNG_ELEMENT_ID, ɵNG_INJ_DEF, ɵNG_MOD_DEF, ɵNG_PIPE_DEF, ɵNG_PROV_DEF, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR, ɵNO_CHANGE, ɵNgModuleFactory, ɵNoopNgZone, ɵReflectionCapabilities, ɵRender3ComponentFactory, ɵRender3ComponentRef, ɵRender3NgModuleRef, ɵSWITCH_CHANGE_DETECTOR_REF_FACTORY__POST_R3__, ɵSWITCH_COMPILE_COMPONENT__POST_R3__, ɵSWITCH_COMPILE_DIRECTIVE__POST_R3__, ɵSWITCH_COMPILE_INJECTABLE__POST_R3__, ɵSWITCH_COMPILE_NGMODULE__POST_R3__, ɵSWITCH_COMPILE_PIPE__POST_R3__, ɵSWITCH_ELEMENT_REF_FACTORY__POST_R3__, ɵSWITCH_IVY_ENABLED__POST_R3__, ɵSWITCH_RENDERER2_FACTORY__POST_R3__, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__, ɵSWITCH_VIEW_CONTAINER_REF_FACTORY__POST_R3__, ɵ_sanitizeHtml, ɵ_sanitizeStyle, ɵ_sanitizeUrl, ɵallowSanitizationBypassAndThrow, ɵand, ɵangular_packages_core_core_a, ɵangular_packages_core_core_b, ɵangular_packages_core_core_ba, ɵangular_packages_core_core_bb, ɵangular_packages_core_core_bc, ɵangular_packages_core_core_bd, ɵangular_packages_core_core_bf, ɵangular_packages_core_core_bg, ɵangular_packages_core_core_bh, ɵangular_packages_core_core_bi, ɵangular_packages_core_core_bj, ɵangular_packages_core_core_bk, ɵangular_packages_core_core_bl, ɵangular_packages_core_core_bm, ɵangular_packages_core_core_bn, ɵangular_packages_core_core_bp, ɵangular_packages_core_core_bq, ɵangular_packages_core_core_c, ɵangular_packages_core_core_d, ɵangular_packages_core_core_e, ɵangular_packages_core_core_f, ɵangular_packages_core_core_g, ɵangular_packages_core_core_h, ɵangular_packages_core_core_i, ɵangular_packages_core_core_j, ɵangular_packages_core_core_k, ɵangular_packages_core_core_l, ɵangular_packages_core_core_m, ɵangular_packages_core_core_n, ɵangular_packages_core_core_o, ɵangular_packages_core_core_p, ɵangular_packages_core_core_q, ɵangular_packages_core_core_r, ɵangular_packages_core_core_s, ɵangular_packages_core_core_t, ɵangular_packages_core_core_u, ɵangular_packages_core_core_v, ɵangular_packages_core_core_w, ɵangular_packages_core_core_x, ɵangular_packages_core_core_y, ɵangular_packages_core_core_z, ɵbypassSanitizationTrustHtml, ɵbypassSanitizationTrustResourceUrl, ɵbypassSanitizationTrustScript, ɵbypassSanitizationTrustStyle, ɵbypassSanitizationTrustUrl, ɵccf, ɵclearOverrides, ɵclearResolutionOfComponentResourcesQueue, ɵcmf, ɵcompileComponent, ɵcompileDirective, ɵcompileNgModule, ɵcompileNgModuleDefs, ɵcompileNgModuleFactory__POST_R3__, ɵcompilePipe, ɵcreateInjector, ɵcrt, ɵdefaultIterableDiffers, ɵdefaultKeyValueDiffers, ɵdetectChanges, ɵdevModeEqual, ɵdid, ɵeld, ɵfindLocaleData, ɵflushModuleScopingQueueAsMuchAsPossible, ɵgetComponentViewDefinitionFactory, ɵgetDebugNodeR2, ɵgetDebugNode__POST_R3__, ɵgetDirectives, ɵgetHostElement, ɵgetInjectableDef, ɵgetLContext, ɵgetLocaleCurrencyCode, ɵgetLocalePluralCase, ɵgetModuleFactory__POST_R3__, ɵgetSanitizationBypassType, ɵglobal, ɵinitServicesIfNeeded, ɵinlineInterpolate, ɵinterpolate, ɵisBoundToModule__POST_R3__, ɵisDefaultChangeDetectionStrategy, ɵisListLikeIterable, ɵisObservable, ɵisPromise, ɵivyEnabled, ɵlooseIdentical, ɵmakeDecorator, ɵmarkDirty, ɵmod, ɵmpd, ɵncd, ɵnov, ɵoverrideComponentView, ɵoverrideProvider, ɵpad, ɵpatchComponentDefWithScope, ɵpid, ɵpod, ɵppd, ɵprd, ɵpublishDefaultGlobalUtils, ɵpublishGlobalUtil, ɵqud, ɵregisterLocaleData, ɵregisterModuleFactory, ɵregisterNgModuleType, ɵrenderComponent, ɵresetCompiledComponents, ɵresolveComponentResources, ɵsetClassMetadata, ɵsetCurrentInjector, ɵsetDocument, ɵsetLocaleId, ɵstore, ɵstringify, ɵted, ɵtransitiveScopesFor, ɵunregisterLocaleData, ɵunv, ɵunwrapSafeValue, ɵvid, ɵwhenRendered, ɵɵCopyDefinitionFeature, ɵɵInheritDefinitionFeature, ɵɵNgOnChangesFeature, ɵɵProvidersFeature, ɵɵadvance, ɵɵattribute, ɵɵattributeInterpolate1, ɵɵattributeInterpolate2, ɵɵattributeInterpolate3, ɵɵattributeInterpolate4, ɵɵattributeInterpolate5, ɵɵattributeInterpolate6, ɵɵattributeInterpolate7, ɵɵattributeInterpolate8, ɵɵattributeInterpolateV, ɵɵclassMap, ɵɵclassMapInterpolate1, ɵɵclassMapInterpolate2, ɵɵclassMapInterpolate3, ɵɵclassMapInterpolate4, ɵɵclassMapInterpolate5, ɵɵclassMapInterpolate6, ɵɵclassMapInterpolate7, ɵɵclassMapInterpolate8, ɵɵclassMapInterpolateV, ɵɵclassProp, ɵɵcomponentHostSyntheticListener, ɵɵcontainer, ɵɵcontainerRefreshEnd, ɵɵcontainerRefreshStart, ɵɵcontentQuery, ɵɵdefaultStyleSanitizer, ɵɵdefineComponent, ɵɵdefineDirective, ɵɵdefineInjectable, ɵɵdefineInjector, ɵɵdefineNgModule, ɵɵdefinePipe, ɵɵdirectiveInject, ɵɵdisableBindings, ɵɵelement, ɵɵelementContainer, ɵɵelementContainerEnd, ɵɵelementContainerStart, ɵɵelementEnd, ɵɵelementStart, ɵɵembeddedViewEnd, ɵɵembeddedViewStart, ɵɵenableBindings, ɵɵgetCurrentView, ɵɵgetFactoryOf, ɵɵgetInheritedFactory, ɵɵhostProperty, ɵɵi18n, ɵɵi18nApply, ɵɵi18nAttributes, ɵɵi18nEnd, ɵɵi18nExp, ɵɵi18nPostprocess, ɵɵi18nStart, ɵɵinject, ɵɵinjectAttribute, ɵɵinjectPipeChangeDetectorRef, ɵɵinvalidFactory, ɵɵinvalidFactoryDep, ɵɵlistener, ɵɵloadQuery, ɵɵnamespaceHTML, ɵɵnamespaceMathML, ɵɵnamespaceSVG, ɵɵnextContext, ɵɵpipe, ɵɵpipeBind1, ɵɵpipeBind2, ɵɵpipeBind3, ɵɵpipeBind4, ɵɵpipeBindV, ɵɵprojection, ɵɵprojectionDef, ɵɵproperty, ɵɵpropertyInterpolate, ɵɵpropertyInterpolate1, ɵɵpropertyInterpolate2, ɵɵpropertyInterpolate3, ɵɵpropertyInterpolate4, ɵɵpropertyInterpolate5, ɵɵpropertyInterpolate6, ɵɵpropertyInterpolate7, ɵɵpropertyInterpolate8, ɵɵpropertyInterpolateV, ɵɵpureFunction0, ɵɵpureFunction1, ɵɵpureFunction2, ɵɵpureFunction3, ɵɵpureFunction4, ɵɵpureFunction5, ɵɵpureFunction6, ɵɵpureFunction7, ɵɵpureFunction8, ɵɵpureFunctionV, ɵɵqueryRefresh, ɵɵreference, ɵɵresolveBody, ɵɵresolveDocument, ɵɵresolveWindow, ɵɵrestoreView, ɵɵsanitizeHtml, ɵɵsanitizeResourceUrl, ɵɵsanitizeScript, ɵɵsanitizeStyle, ɵɵsanitizeUrl, ɵɵsanitizeUrlOrResourceUrl, ɵɵselect, ɵɵsetComponentScope, ɵɵsetNgModuleScope, ɵɵstaticContentQuery, ɵɵstaticViewQuery, ɵɵstyleMap, ɵɵstyleMapInterpolate1, ɵɵstyleMapInterpolate2, ɵɵstyleMapInterpolate3, ɵɵstyleMapInterpolate4, ɵɵstyleMapInterpolate5, ɵɵstyleMapInterpolate6, ɵɵstyleMapInterpolate7, ɵɵstyleMapInterpolate8, ɵɵstyleMapInterpolateV, ɵɵstyleProp, ɵɵstylePropInterpolate1, ɵɵstylePropInterpolate2, ɵɵstylePropInterpolate3, ɵɵstylePropInterpolate4, ɵɵstylePropInterpolate5, ɵɵstylePropInterpolate6, ɵɵstylePropInterpolate7, ɵɵstylePropInterpolate8, ɵɵstylePropInterpolateV, ɵɵstyleSanitizer, ɵɵtemplate, ɵɵtemplateRefExtractor, ɵɵtext, ɵɵtextInterpolate, ɵɵtextInterpolate1, ɵɵtextInterpolate2, ɵɵtextInterpolate3, ɵɵtextInterpolate4, ɵɵtextInterpolate5, ɵɵtextInterpolate6, ɵɵtextInterpolate7, ɵɵtextInterpolate8, ɵɵtextInterpolateV, ɵɵupdateSyntheticHostBinding, ɵɵviewQuery */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9855,6 +9855,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstaticContentQuery", function() { return ɵɵstaticContentQuery; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstaticViewQuery", function() { return ɵɵstaticViewQuery; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMap", function() { return ɵɵstyleMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate1", function() { return ɵɵstyleMapInterpolate1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate2", function() { return ɵɵstyleMapInterpolate2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate3", function() { return ɵɵstyleMapInterpolate3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate4", function() { return ɵɵstyleMapInterpolate4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate5", function() { return ɵɵstyleMapInterpolate5; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate6", function() { return ɵɵstyleMapInterpolate6; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate7", function() { return ɵɵstyleMapInterpolate7; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolate8", function() { return ɵɵstyleMapInterpolate8; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleMapInterpolateV", function() { return ɵɵstyleMapInterpolateV; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstyleProp", function() { return ɵɵstyleProp; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstylePropInterpolate1", function() { return ɵɵstylePropInterpolate1; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵɵstylePropInterpolate2", function() { return ɵɵstylePropInterpolate2; });
@@ -9884,7 +9893,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /**
- * @license Angular v9.0.0
+ * @license Angular v9.0.4
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -12483,6 +12492,23 @@ function assertDirectiveDef(obj) {
 
 /**
  * @fileoverview added by tsickle
+ * Generated from: packages/core/src/render3/namespaces.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/** @type {?} */
+const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
+/** @type {?} */
+const MATH_ML_NAMESPACE = 'http://www.w3.org/1998/MathML/';
+
+/**
+ * @fileoverview added by tsickle
  * Generated from: packages/core/src/render3/state.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
@@ -12617,12 +12643,12 @@ function getPreviousOrParentTNode() {
 }
 /**
  * @param {?} tNode
- * @param {?} _isParent
+ * @param {?} isParent
  * @return {?}
  */
-function setPreviousOrParentTNode(tNode, _isParent) {
+function setPreviousOrParentTNode(tNode, isParent) {
     instructionState.lFrame.previousOrParentTNode = tNode;
-    instructionState.lFrame.isParent = _isParent;
+    instructionState.lFrame.isParent = isParent;
 }
 /**
  * @return {?}
@@ -12760,27 +12786,7 @@ function enterDI(newView, tNode) {
     instructionState.lFrame = newLFrame;
     newLFrame.previousOrParentTNode = (/** @type {?} */ (tNode));
     newLFrame.lView = newView;
-    if (ngDevMode) {
-        // resetting for safety in dev mode only.
-        newLFrame.isParent = DEV_MODE_VALUE;
-        newLFrame.selectedIndex = DEV_MODE_VALUE;
-        newLFrame.contextLView = DEV_MODE_VALUE;
-        newLFrame.elementDepthCount = DEV_MODE_VALUE;
-        newLFrame.currentNamespace = DEV_MODE_VALUE;
-        newLFrame.currentSanitizer = DEV_MODE_VALUE;
-        newLFrame.bindingRootIndex = DEV_MODE_VALUE;
-        newLFrame.currentQueryIndex = DEV_MODE_VALUE;
-    }
 }
-/** @type {?} */
-const DEV_MODE_VALUE = 'Value indicating that DI is trying to read value which it should not need to know about.';
-/**
- * This is a light weight version of the `leaveView` which is needed by the DI system.
- *
- * Because the implementation is same it is only an alias
- * @type {?}
- */
-const leaveDI = leaveView;
 /**
  * Swap the current lView with a new lView.
  *
@@ -12797,22 +12803,26 @@ function enterView(newView, tNode) {
     ngDevMode && assertLViewOrUndefined(newView);
     /** @type {?} */
     const newLFrame = allocLFrame();
+    if (ngDevMode) {
+        assertEqual(newLFrame.isParent, true, 'Expected clean LFrame');
+        assertEqual(newLFrame.lView, null, 'Expected clean LFrame');
+        assertEqual(newLFrame.tView, null, 'Expected clean LFrame');
+        assertEqual(newLFrame.selectedIndex, 0, 'Expected clean LFrame');
+        assertEqual(newLFrame.elementDepthCount, 0, 'Expected clean LFrame');
+        assertEqual(newLFrame.currentDirectiveIndex, -1, 'Expected clean LFrame');
+        assertEqual(newLFrame.currentNamespace, null, 'Expected clean LFrame');
+        assertEqual(newLFrame.currentSanitizer, null, 'Expected clean LFrame');
+        assertEqual(newLFrame.bindingRootIndex, -1, 'Expected clean LFrame');
+        assertEqual(newLFrame.currentQueryIndex, 0, 'Expected clean LFrame');
+    }
     /** @type {?} */
     const tView = newView[TVIEW];
     instructionState.lFrame = newLFrame;
     newLFrame.previousOrParentTNode = (/** @type {?} */ (tNode));
-    newLFrame.isParent = true;
     newLFrame.lView = newView;
     newLFrame.tView = tView;
-    newLFrame.selectedIndex = 0;
     newLFrame.contextLView = (/** @type {?} */ (newView));
-    newLFrame.elementDepthCount = 0;
-    newLFrame.currentDirectiveIndex = -1;
-    newLFrame.currentNamespace = null;
-    newLFrame.currentSanitizer = null;
-    newLFrame.bindingRootIndex = -1;
     newLFrame.bindingIndex = tView.bindingStartIndex;
-    newLFrame.currentQueryIndex = 0;
 }
 /**
  * Allocates next free LFrame. This function tries to reuse the `LFrame`s to lower memory pressure.
@@ -12868,10 +12878,54 @@ function createLFrame(parent) {
     return lFrame;
 }
 /**
+ * A lightweight version of leave which is used with DI.
+ *
+ * This function only resets `previousOrParentTNode` and `LView` as those are the only properties
+ * used with DI (`enterDI()`).
+ *
+ * NOTE: This function is reexported as `leaveDI`. However `leaveDI` has return type of `void` where
+ * as `leaveViewLight` has `LFrame`. This is so that `leaveViewLight` can be used in `leaveView`.
+ * @return {?}
+ */
+function leaveViewLight() {
+    /** @type {?} */
+    const oldLFrame = instructionState.lFrame;
+    instructionState.lFrame = oldLFrame.parent;
+    oldLFrame.previousOrParentTNode = (/** @type {?} */ (null));
+    oldLFrame.lView = (/** @type {?} */ (null));
+    return oldLFrame;
+}
+/**
+ * This is a lightweight version of the `leaveView` which is needed by the DI system.
+ *
+ * NOTE: this function is an alias so that we can change the type of the function to have `void`
+ * return type.
+ * @type {?}
+ */
+const leaveDI = leaveViewLight;
+/**
+ * Leave the current `LView`
+ *
+ * This pops the `LFrame` with the associated `LView` from the stack.
+ *
+ * IMPORTANT: We must zero out the `LFrame` values here otherwise they will be retained. This is
+ * because for performance reasons we don't release `LFrame` but rather keep it for next use.
  * @return {?}
  */
 function leaveView() {
-    instructionState.lFrame = instructionState.lFrame.parent;
+    /** @type {?} */
+    const oldLFrame = leaveViewLight();
+    oldLFrame.isParent = true;
+    oldLFrame.tView = (/** @type {?} */ (null));
+    oldLFrame.selectedIndex = 0;
+    oldLFrame.contextLView = (/** @type {?} */ (null));
+    oldLFrame.elementDepthCount = 0;
+    oldLFrame.currentDirectiveIndex = -1;
+    oldLFrame.currentNamespace = null;
+    oldLFrame.currentSanitizer = null;
+    oldLFrame.bindingRootIndex = -1;
+    oldLFrame.bindingIndex = -1;
+    oldLFrame.currentQueryIndex = 0;
 }
 /**
  * @template T
@@ -12928,7 +12982,7 @@ function setSelectedIndex(index) {
  * @return {?}
  */
 function ɵɵnamespaceSVG() {
-    instructionState.lFrame.currentNamespace = 'http://www.w3.org/2000/svg';
+    instructionState.lFrame.currentNamespace = SVG_NAMESPACE;
 }
 /**
  * Sets the namespace used to create elements to `'http://www.w3.org/1998/MathML/'` in global state.
@@ -12937,7 +12991,7 @@ function ɵɵnamespaceSVG() {
  * @return {?}
  */
 function ɵɵnamespaceMathML() {
-    instructionState.lFrame.currentNamespace = 'http://www.w3.org/1998/MathML/';
+    instructionState.lFrame.currentNamespace = MATH_ML_NAMESPACE;
 }
 /**
  * Sets the namespace used to create elements to `null`, which forces element creation to use
@@ -17764,6 +17818,50 @@ function stringifyCSSSelector(selector) {
 function stringifyCSSSelectorList(selectorList) {
     return selectorList.map(stringifyCSSSelector).join(',');
 }
+/**
+ * Extracts attributes and classes information from a given CSS selector.
+ *
+ * This function is used while creating a component dynamically. In this case, the host element
+ * (that is created dynamically) should contain attributes and classes specified in component's CSS
+ * selector.
+ *
+ * @param {?} selector CSS selector in parsed form (in a form of array)
+ * @return {?} object with `attrs` and `classes` fields that contain extracted information
+ */
+function extractAttrsAndClassesFromSelector(selector) {
+    /** @type {?} */
+    const attrs = [];
+    /** @type {?} */
+    const classes = [];
+    /** @type {?} */
+    let i = 1;
+    /** @type {?} */
+    let mode = 2 /* ATTRIBUTE */;
+    while (i < selector.length) {
+        /** @type {?} */
+        let valueOrMarker = selector[i];
+        if (typeof valueOrMarker === 'string') {
+            if (mode === 2 /* ATTRIBUTE */) {
+                if (valueOrMarker !== '') {
+                    attrs.push(valueOrMarker, (/** @type {?} */ (selector[++i])));
+                }
+            }
+            else if (mode === 8 /* CLASS */) {
+                classes.push(valueOrMarker);
+            }
+        }
+        else {
+            // According to CssSelector spec, once we come across `SelectorFlags.NOT` flag, the negative
+            // mode is maintained for remaining chunks of a selector. Since attributes and classes are
+            // extracted only for "positive" part of the selector, we can stop here.
+            if (!isPositive(mode))
+                break;
+            mode = valueOrMarker;
+        }
+        i++;
+    }
+    return { attrs, classes };
+}
 
 /**
  * @fileoverview added by tsickle
@@ -21590,7 +21688,7 @@ function getTViewCleanup(tView) {
  */
 function loadComponentRenderer(tNode, lView) {
     /** @type {?} */
-    const componentLView = (/** @type {?} */ (lView[tNode.index]));
+    const componentLView = (/** @type {?} */ (unwrapLView(lView[tNode.index])));
     return componentLView[RENDERER];
 }
 /**
@@ -24654,9 +24752,6 @@ class R3Injector {
         if (def == null) {
             return false;
         }
-        // Track the InjectorType and add a provider for it.
-        this.injectorDefTypes.add(defType);
-        this.records.set(defType, makeRecord(def.factory, NOT_YET));
         // Add providers in the same way that @NgModule resolution did:
         // First, include providers from any imports.
         if (def.imports != null && !isDuplicate) {
@@ -24700,6 +24795,10 @@ class R3Injector {
                 }
             }
         }
+        // Track the InjectorType and add a provider for it. It's important that this is done after the
+        // def's imports.
+        this.injectorDefTypes.add(defType);
+        this.records.set(defType, makeRecord(def.factory, NOT_YET));
         // Next, include providers listed on the definition itself.
         /** @type {?} */
         const defProviders = def.providers;
@@ -24894,7 +24993,9 @@ function providerToFactory(provider, ngModuleType, providers) {
     /** @type {?} */
     let factory = undefined;
     if (isTypeProvider(provider)) {
-        return injectableDefOrInjectorDefFactory(resolveForwardRef(provider));
+        /** @type {?} */
+        const unwrappedProvider = resolveForwardRef(provider);
+        return getFactoryDef(unwrappedProvider) || injectableDefOrInjectorDefFactory(unwrappedProvider);
     }
     else {
         if (isValueProvider(provider)) {
@@ -24929,7 +25030,7 @@ function providerToFactory(provider, ngModuleType, providers) {
                 () => new (classRef)(...injectArgs(provider.deps)));
             }
             else {
-                return injectableDefOrInjectorDefFactory(classRef);
+                return getFactoryDef(classRef) || injectableDefOrInjectorDefFactory(classRef);
             }
         }
     }
@@ -28078,9 +28179,9 @@ function ɵɵattributeInterpolate8(attrName, prefix, v0, i0, v1, i1, v2, i2, v3,
     return ɵɵattributeInterpolate8;
 }
 /**
- * Update an interpolated attribute on an element with 8 or more bound values surrounded by text.
+ * Update an interpolated attribute on an element with 9 or more bound values surrounded by text.
  *
- * Used when the number of interpolated values exceeds 7.
+ * Used when the number of interpolated values exceeds 8.
  *
  * ```html
  * <div
@@ -28097,7 +28198,7 @@ function ɵɵattributeInterpolate8(attrName, prefix, v0, i0, v1, i1, v2, i2, v3,
  *
  * \@codeGenApi
  * @param {?} attrName The name of the attribute to update.
- * @param {?} values The a collection of values and the strings in-between those values, beginning with
+ * @param {?} values The collection of values and the strings in-between those values, beginning with
  * a string prefix and ending with a string suffix.
  * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
  * @param {?=} sanitizer An optional sanitizer function
@@ -29955,9 +30056,9 @@ function ɵɵpropertyInterpolate8(propName, prefix, v0, i0, v1, i1, v2, i2, v3, 
     return ɵɵpropertyInterpolate8;
 }
 /**
- * Update an interpolated property on an element with 8 or more bound values surrounded by text.
+ * Update an interpolated property on an element with 9 or more bound values surrounded by text.
  *
- * Used when the number of interpolated values exceeds 7.
+ * Used when the number of interpolated values exceeds 8.
  *
  * ```html
  * <div
@@ -29978,7 +30079,7 @@ function ɵɵpropertyInterpolate8(propName, prefix, v0, i0, v1, i1, v2, i2, v3, 
  *
  * \@codeGenApi
  * @param {?} propName The name of the property to update.
- * @param {?} values The a collection of values and the strings inbetween those values, beginning with a
+ * @param {?} values The collection of values and the strings inbetween those values, beginning with a
  * string prefix and ending with a string suffix.
  * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
  * @param {?=} sanitizer An optional sanitizer function
@@ -31002,8 +31103,9 @@ function checkStylingMap(keyValueArraySet, stringParser, value, isClassBased) {
             let staticPrefix = isClassBased ? tNode.classes : tNode.styles;
             ngDevMode && isClassBased === false && staticPrefix !== null &&
                 assertEqual(staticPrefix.endsWith(';'), true, 'Expecting static portion to end with \';\'');
-            if (typeof value === 'string') {
-                value = concatStringsWithSpace(staticPrefix, (/** @type {?} */ (value)));
+            if (staticPrefix !== null) {
+                // We want to make sure that falsy values of `value` become empty strings.
+                value = concatStringsWithSpace(staticPrefix, value ? value : '');
             }
             // Given `<div [style] my-dir>` such that `my-dir` has `@Input('style')`.
             // This takes over the `[style]` binding. (Same for `[class]`)
@@ -31372,40 +31474,26 @@ function toStylingKeyValueArray(keyValueArraySet, stringParser, value) {
         return (/** @type {?} */ (EMPTY_ARRAY$3));
     /** @type {?} */
     const styleKeyValueArray = (/** @type {?} */ ([]));
-    if (Array.isArray(value)) {
-        for (let i = 0; i < value.length; i++) {
-            keyValueArraySet(styleKeyValueArray, value[i], true);
+    /** @type {?} */
+    const unwrappedValue = (/** @type {?} */ (unwrapSafeValue(value)));
+    if (Array.isArray(unwrappedValue)) {
+        for (let i = 0; i < unwrappedValue.length; i++) {
+            keyValueArraySet(styleKeyValueArray, unwrappedValue[i], true);
         }
     }
-    else if (typeof value === 'object') {
-        if (value instanceof Map) {
-            value.forEach((/**
-             * @param {?} v
-             * @param {?} k
-             * @return {?}
-             */
-            (v, k) => keyValueArraySet(styleKeyValueArray, k, v)));
-        }
-        else if (value instanceof Set) {
-            value.forEach((/**
-             * @param {?} k
-             * @return {?}
-             */
-            (k) => keyValueArraySet(styleKeyValueArray, k, true)));
-        }
-        else {
-            for (const key in value) {
-                if (value.hasOwnProperty(key)) {
-                    keyValueArraySet(styleKeyValueArray, key, value[key]);
-                }
+    else if (typeof unwrappedValue === 'object') {
+        for (const key in unwrappedValue) {
+            if (unwrappedValue.hasOwnProperty(key)) {
+                keyValueArraySet(styleKeyValueArray, key, unwrappedValue[key]);
             }
         }
     }
-    else if (typeof value === 'string') {
-        stringParser(styleKeyValueArray, value);
+    else if (typeof unwrappedValue === 'string') {
+        stringParser(styleKeyValueArray, unwrappedValue);
     }
     else {
-        ngDevMode && throwError('Unsupported styling type ' + typeof value + ': ' + value);
+        ngDevMode &&
+            throwError('Unsupported styling type ' + typeof unwrappedValue + ': ' + unwrappedValue);
     }
     return styleKeyValueArray;
 }
@@ -31429,11 +31517,10 @@ function styleKeyValueArraySet(keyValueArray, key, value) {
  * Update map based styling.
  *
  * Map based styling could be anything which contains more than one binding. For example `string`,
- * `Map`, `Set` or object literal. Dealing with all of these types would complicate the logic so
+ * or object literal. Dealing with all of these types would complicate the logic so
  * instead this function expects that the complex input is first converted into normalized
  * `KeyValueArray`. The advantage of normalization is that we get the values sorted, which makes it
- * very
- * cheap to compute deltas between the previous and current value.
+ * very cheap to compute deltas between the previous and current value.
  *
  * @param {?} tView Associated `TView.data` contains the linked list of binding priorities.
  * @param {?} tNode `TNode` where the binding is located.
@@ -32092,7 +32179,7 @@ function ɵɵtextInterpolate8(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5
  * ```
  * .
  * \@codeGenApi
- * @param {?} values The a collection of values and the strings in between those values, beginning with
+ * @param {?} values The collection of values and the strings in between those values, beginning with
  * a string prefix and ending with a string suffix.
  * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
  *
@@ -32409,9 +32496,9 @@ function ɵɵclassMapInterpolate8(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4
     checkStylingMap(keyValueArraySet, classStringParser, interpolatedValue, true);
 }
 /**
- * Update an interpolated class on an element with 8 or more bound values surrounded by text.
+ * Update an interpolated class on an element with 9 or more bound values surrounded by text.
  *
- * Used when the number of interpolated values exceeds 7.
+ * Used when the number of interpolated values exceeds 8.
  *
  * ```html
  * <div
@@ -32427,7 +32514,7 @@ function ɵɵclassMapInterpolate8(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4
  * ```
  * .
  * \@codeGenApi
- * @param {?} values The a collection of values and the strings in-between those values, beginning with
+ * @param {?} values The collection of values and the strings in-between those values, beginning with
  * a string prefix and ending with a string suffix.
  * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
  * @return {?}
@@ -32438,6 +32525,344 @@ function ɵɵclassMapInterpolateV(values) {
     /** @type {?} */
     const interpolatedValue = interpolationV(lView, values);
     checkStylingMap(keyValueArraySet, classStringParser, interpolatedValue, true);
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: packages/core/src/render3/instructions/style_map_interpolation.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ *
+ * Update an interpolated style on an element with single bound value surrounded by text.
+ *
+ * Used when the value passed to a property has 1 interpolated value in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate1('key: ', v0, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate1(prefix, v0, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation1(lView, prefix, v0, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 2 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 2 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key1: {{v1}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate2('key: ', v0, '; key1: ', v1, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate2(prefix, v0, i0, v1, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation2(lView, prefix, v0, i0, v1, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 3 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 3 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key2: {{v1}}; key2: {{v2}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate3(
+ *     'key: ', v0, '; key1: ', v1, '; key2: ', v2, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} i1 Static value used for concatenation only.
+ * @param {?} v2 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate3(prefix, v0, i0, v1, i1, v2, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation3(lView, prefix, v0, i0, v1, i1, v2, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 4 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 4 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate4(
+ *     'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} i1 Static value used for concatenation only.
+ * @param {?} v2 Value checked for change.
+ * @param {?} i2 Static value used for concatenation only.
+ * @param {?} v3 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate4(prefix, v0, i0, v1, i1, v2, i2, v3, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation4(lView, prefix, v0, i0, v1, i1, v2, i2, v3, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 5 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 5 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate5(
+ *     'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} i1 Static value used for concatenation only.
+ * @param {?} v2 Value checked for change.
+ * @param {?} i2 Static value used for concatenation only.
+ * @param {?} v3 Value checked for change.
+ * @param {?} i3 Static value used for concatenation only.
+ * @param {?} v4 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate5(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation5(lView, prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 6 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 6 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}};
+ *             key5: {{v5}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate6(
+ *    'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
+ *    'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} i1 Static value used for concatenation only.
+ * @param {?} v2 Value checked for change.
+ * @param {?} i2 Static value used for concatenation only.
+ * @param {?} v3 Value checked for change.
+ * @param {?} i3 Static value used for concatenation only.
+ * @param {?} v4 Value checked for change.
+ * @param {?} i4 Static value used for concatenation only.
+ * @param {?} v5 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate6(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation6(lView, prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 7 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 7 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}; key5: {{v5}};
+ *             key6: {{v6}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate7(
+ *    'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
+ *    '; key6: ', v6, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} i1 Static value used for concatenation only.
+ * @param {?} v2 Value checked for change.
+ * @param {?} i2 Static value used for concatenation only.
+ * @param {?} v3 Value checked for change.
+ * @param {?} i3 Static value used for concatenation only.
+ * @param {?} v4 Value checked for change.
+ * @param {?} i4 Static value used for concatenation only.
+ * @param {?} v5 Value checked for change.
+ * @param {?} i5 Static value used for concatenation only.
+ * @param {?} v6 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate7(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, i5, v6, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation7(lView, prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, i5, v6, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ *
+ * Update an interpolated style on an element with 8 bound values surrounded by text.
+ *
+ * Used when the value passed to a property has 8 interpolated values in it:
+ *
+ * ```html
+ * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}; key5: {{v5}};
+ *             key6: {{v6}}; key7: {{v7}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolate8(
+ *    'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
+ *    '; key6: ', v6, '; key7: ', v7, 'suffix');
+ * ```
+ *
+ * \@codeGenApi
+ * @param {?} prefix Static value used for concatenation only.
+ * @param {?} v0 Value checked for change.
+ * @param {?} i0 Static value used for concatenation only.
+ * @param {?} v1 Value checked for change.
+ * @param {?} i1 Static value used for concatenation only.
+ * @param {?} v2 Value checked for change.
+ * @param {?} i2 Static value used for concatenation only.
+ * @param {?} v3 Value checked for change.
+ * @param {?} i3 Static value used for concatenation only.
+ * @param {?} v4 Value checked for change.
+ * @param {?} i4 Static value used for concatenation only.
+ * @param {?} v5 Value checked for change.
+ * @param {?} i5 Static value used for concatenation only.
+ * @param {?} v6 Value checked for change.
+ * @param {?} i6 Static value used for concatenation only.
+ * @param {?} v7 Value checked for change.
+ * @param {?} suffix Static value used for concatenation only.
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolate8(prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, i5, v6, i6, v7, suffix) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolation8(lView, prefix, v0, i0, v1, i1, v2, i2, v3, i3, v4, i4, v5, i5, v6, i6, v7, suffix);
+    ɵɵstyleMap(interpolatedValue);
+}
+/**
+ * Update an interpolated style on an element with 9 or more bound values surrounded by text.
+ *
+ * Used when the number of interpolated values exceeds 8.
+ *
+ * ```html
+ * <div
+ *  class="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}; key5: {{v5}};
+ *         key6: {{v6}}; key7: {{v7}}; key8: {{v8}}; key9: {{v9}}suffix"></div>
+ * ```
+ *
+ * Its compiled representation is:
+ *
+ * ```ts
+ * ɵɵstyleMapInterpolateV(
+ *    ['key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
+ *     '; key6: ', v6, '; key7: ', v7, '; key8: ', v8, '; key9: ', v9, 'suffix']);
+ * ```
+ * .
+ * \@codeGenApi
+ * @param {?} values The collection of values and the strings in-between those values, beginning with
+ * a string prefix and ending with a string suffix.
+ * (e.g. `['prefix', value0, '; key2: ', value1, '; key2: ', value2, ..., value99, 'suffix']`)
+ * @return {?}
+ */
+function ɵɵstyleMapInterpolateV(values) {
+    /** @type {?} */
+    const lView = getLView();
+    /** @type {?} */
+    const interpolatedValue = interpolationV(lView, values);
+    ɵɵstyleMap(interpolatedValue);
 }
 
 /**
@@ -32760,10 +33185,10 @@ function ɵɵstylePropInterpolate8(prop, prefix, v0, i0, v1, i1, v2, i2, v3, i3,
     return ɵɵstylePropInterpolate8;
 }
 /**
- * Update an interpolated style property on an element with 8 or more bound values surrounded by
+ * Update an interpolated style property on an element with 9 or more bound values surrounded by
  * text.
  *
- * Used when the number of interpolated values exceeds 7.
+ * Used when the number of interpolated values exceeds 8.
  *
  * ```html
  * <div
@@ -32781,7 +33206,7 @@ function ɵɵstylePropInterpolate8(prop, prefix, v0, i0, v1, i1, v2, i2, v3, i3,
  *
  * \@codeGenApi
  * @param {?} prop
- * @param {?} values The a collection of values and the strings in-between those values, beginning with
+ * @param {?} values The collection of values and the strings in-between those values, beginning with
  * a string prefix and ending with a string suffix.
  * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
  * @param {?=} valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
@@ -33466,7 +33891,7 @@ function renderComponent$1(componentType /* Type as workaround for: Microsoft/Ty
         if (rendererFactory.begin)
             rendererFactory.begin();
         /** @type {?} */
-        const componentView = createRootComponentView(hostRNode, componentDef, rootView, rendererFactory, renderer, null, sanitizer);
+        const componentView = createRootComponentView(hostRNode, componentDef, rootView, rendererFactory, renderer, sanitizer);
         component = createRootComponent(componentView, componentDef, rootView, rootContext, opts.hostFeatures || null);
         // create mode pass
         renderView(rootTView, rootView, null);
@@ -33488,12 +33913,11 @@ function renderComponent$1(componentType /* Type as workaround for: Microsoft/Ty
  * @param {?} rootView The parent view where the host node is stored
  * @param {?} rendererFactory
  * @param {?} hostRenderer The current renderer
- * @param {?} addVersion
- * @param {?} sanitizer The sanitizer, if provided
+ * @param {?=} sanitizer The sanitizer, if provided
  *
  * @return {?} Component view created
  */
-function createRootComponentView(rNode, def, rootView, rendererFactory, hostRenderer, addVersion, sanitizer) {
+function createRootComponentView(rNode, def, rootView, rendererFactory, hostRenderer, sanitizer) {
     /** @type {?} */
     const tView = rootView[TVIEW];
     ngDevMode && assertDataInRange(rootView, 0 + HEADER_OFFSET);
@@ -33516,12 +33940,6 @@ function createRootComponentView(rNode, def, rootView, rendererFactory, hostRend
     }
     /** @type {?} */
     const viewRenderer = rendererFactory.createRenderer(rNode, def);
-    if (rNode !== null && addVersion) {
-        ngDevMode && ngDevMode.rendererSetAttribute++;
-        isProceduralRenderer(hostRenderer) ?
-            hostRenderer.setAttribute(rNode, 'ng-version', addVersion) :
-            rNode.setAttribute('ng-version', addVersion);
-    }
     /** @type {?} */
     const componentView = createLView(rootView, getOrCreateTComponentView(def), null, def.onPush ? 64 /* Dirty */ : 16 /* CheckAlways */, rootView[HEADER_OFFSET], tNode, rendererFactory, viewRenderer, sanitizer);
     if (tView.firstCreatePass) {
@@ -33701,6 +34119,15 @@ function ɵɵInheritDefinitionFeature(definition) {
                 fillProperties(definition.inputs, superDef.inputs);
                 fillProperties(definition.declaredInputs, superDef.declaredInputs);
                 fillProperties(definition.outputs, superDef.outputs);
+                // Merge animations metadata.
+                // If `superDef` is a Component, the `data` field is present (defaults to an empty object).
+                if (isComponentDef(superDef) && superDef.data.animation) {
+                    // If super def is a Component, the `definition` is also a Component, since Directives can
+                    // not inherit Components (we throw an error above and cannot reach this code).
+                    /** @type {?} */
+                    const defData = ((/** @type {?} */ (definition))).data;
+                    defData.animation = (defData.animation || []).concat(superDef.data.animation);
+                }
                 // Inherit hooks
                 // Assume super class inheritance feature has already run.
                 writeableDef.afterContentChecked =
@@ -34158,23 +34585,15 @@ function resolveProvider$1(provider, tInjectables, lInjectablesBlueprint, isComp
         const endIndex = tNode.directiveStart;
         /** @type {?} */
         const cptViewProvidersCount = tNode.providerIndexes >> 16 /* CptViewProvidersCountShift */;
-        if (isClassProvider(provider) || isTypeProvider(provider)) {
-            /** @type {?} */
-            const prototype = (((/** @type {?} */ (provider))).useClass || provider).prototype;
-            /** @type {?} */
-            const ngOnDestroy = prototype.ngOnDestroy;
-            if (ngOnDestroy) {
-                (tView.destroyHooks || (tView.destroyHooks = [])).push(tInjectables.length, ngOnDestroy);
-            }
-        }
         if (isTypeProvider(provider) || !provider.multi) {
             // Single provider case: the factory is created and pushed immediately
             /** @type {?} */
             const factory = new NodeInjectorFactory(providerFactory, isViewProvider, ɵɵdirectiveInject);
             /** @type {?} */
             const existingFactoryIndex = indexOf(token, tInjectables, isViewProvider ? beginIndex : beginIndex + cptViewProvidersCount, endIndex);
-            if (existingFactoryIndex == -1) {
+            if (existingFactoryIndex === -1) {
                 diPublicInInjector(getOrCreateNodeInjectorForNode((/** @type {?} */ (tNode)), lView), tView, token);
+                registerDestroyHooksIfSupported(tView, provider, tInjectables.length);
                 tInjectables.push(token);
                 tNode.directiveStart++;
                 tNode.directiveEnd++;
@@ -34229,6 +34648,7 @@ function resolveProvider$1(provider, tInjectables, lInjectablesBlueprint, isComp
                 if (!isViewProvider && doesViewProvidersFactoryExist) {
                     lInjectablesBlueprint[existingViewProvidersFactoryIndex].providerFactory = factory;
                 }
+                registerDestroyHooksIfSupported(tView, provider, tInjectables.length);
                 tInjectables.push(token);
                 tNode.directiveStart++;
                 tNode.directiveEnd++;
@@ -34240,11 +34660,34 @@ function resolveProvider$1(provider, tInjectables, lInjectablesBlueprint, isComp
             }
             else {
                 // Cases 1.b and 2.b
+                registerDestroyHooksIfSupported(tView, provider, existingProvidersFactoryIndex > -1 ?
+                    existingProvidersFactoryIndex :
+                    existingViewProvidersFactoryIndex);
                 multiFactoryAdd((/** @type {?} */ (lInjectablesBlueprint))[isViewProvider ? existingViewProvidersFactoryIndex : existingProvidersFactoryIndex], providerFactory, !isViewProvider && isComponent);
             }
             if (!isViewProvider && isComponent && doesViewProvidersFactoryExist) {
                 (/** @type {?} */ (lInjectablesBlueprint[existingViewProvidersFactoryIndex].componentProviders))++;
             }
+        }
+    }
+}
+/**
+ * Registers the `ngOnDestroy` hook of a provider, if the provider supports destroy hooks.
+ * @param {?} tView `TView` in which to register the hook.
+ * @param {?} provider Provider whose hook should be registered.
+ * @param {?} contextIndex Index under which to find the context for the hook when it's being invoked.
+ * @return {?}
+ */
+function registerDestroyHooksIfSupported(tView, provider, contextIndex) {
+    /** @type {?} */
+    const providerIsTypeProvider = isTypeProvider(provider);
+    if (providerIsTypeProvider || isClassProvider(provider)) {
+        /** @type {?} */
+        const prototype = (((/** @type {?} */ (provider))).useClass || provider).prototype;
+        /** @type {?} */
+        const ngOnDestroy = prototype.ngOnDestroy;
+        if (ngOnDestroy) {
+            (tView.destroyHooks || (tView.destroyHooks = [])).push(contextIndex, ngOnDestroy);
         }
     }
 }
@@ -34756,7 +35199,7 @@ if (false) {}
  * \@publicApi
  * @type {?}
  */
-const VERSION = new Version('9.0.0');
+const VERSION = new Version('9.0.4');
 
 /**
  * @fileoverview added by tsickle
@@ -39341,6 +39784,15 @@ function toRefArray(map) {
     return array;
 }
 /**
+ * @param {?} elementName
+ * @return {?}
+ */
+function getNamespace$1(elementName) {
+    /** @type {?} */
+    const name = elementName.toLowerCase();
+    return name === 'svg' ? SVG_NAMESPACE : (name === 'math' ? MATH_ML_NAMESPACE : null);
+}
+/**
  * A change detection scheduler token for {\@link RootContext}. This token is the default value used
  * for the default `RootContext` found in the {\@link ROOT_CONTEXT} token.
  * @type {?}
@@ -39430,13 +39882,14 @@ class ComponentFactory$1 extends ComponentFactory {
         const sanitizer = rootViewInjector.get(Sanitizer, null);
         /** @type {?} */
         const hostRenderer = rendererFactory.createRenderer(null, this.componentDef);
+        // Determine a tag name used for creating host elements when this component is created
+        // dynamically. Default to 'div' if this component did not specify any tag name in its selector.
+        /** @type {?} */
+        const elementName = (/** @type {?} */ (this.componentDef.selectors[0][0])) || 'div';
         /** @type {?} */
         const hostRNode = rootSelectorOrNode ?
             locateHostElement(hostRenderer, rootSelectorOrNode, this.componentDef.encapsulation) :
-            // Determine a tag name used for creating host elements when this component is created
-            // dynamically. Default to 'div' if this component did not specify any tag name in its
-            // selector.
-            elementCreate((/** @type {?} */ (this.componentDef.selectors[0][0])) || 'div', rendererFactory.createRenderer(null, this.componentDef), null);
+            elementCreate(elementName, rendererFactory.createRenderer(null, this.componentDef), getNamespace$1(elementName));
         /** @type {?} */
         const rootFlags = this.componentDef.onPush ? 64 /* Dirty */ | 512 /* IsRoot */ :
             16 /* CheckAlways */ | 512 /* IsRoot */;
@@ -39454,8 +39907,6 @@ class ComponentFactory$1 extends ComponentFactory {
         const rootTView = createTView(0 /* Root */, -1, null, 1, 0, null, null, null, null, null);
         /** @type {?} */
         const rootLView = createLView(null, rootTView, rootContext, rootFlags, null, null, rendererFactory, hostRenderer, sanitizer, rootViewInjector);
-        /** @type {?} */
-        const addVersion = rootSelectorOrNode && hostRNode ? VERSION.full : null;
         // rootView is the parent when bootstrapping
         // TODO(misko): it looks like we are entering view here but we don't really need to as
         // `renderView` does that. However as the code is written it is needed because
@@ -39468,7 +39919,24 @@ class ComponentFactory$1 extends ComponentFactory {
         let tElementNode;
         try {
             /** @type {?} */
-            const componentView = createRootComponentView(hostRNode, this.componentDef, rootLView, rendererFactory, hostRenderer, addVersion, null);
+            const componentView = createRootComponentView(hostRNode, this.componentDef, rootLView, rendererFactory, hostRenderer);
+            if (hostRNode) {
+                if (rootSelectorOrNode) {
+                    setUpAttributes(hostRenderer, hostRNode, ['ng-version', VERSION.full]);
+                }
+                else {
+                    // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
+                    // is not defined), also apply attributes and classes extracted from component selector.
+                    // Extract attributes and classes from the first selector only to match VE behavior.
+                    const { attrs, classes } = extractAttrsAndClassesFromSelector(this.componentDef.selectors[0]);
+                    if (attrs) {
+                        setUpAttributes(hostRenderer, hostRNode, attrs);
+                    }
+                    if (classes && classes.length > 0) {
+                        writeDirectClass(hostRenderer, hostRNode, classes.join(' '));
+                    }
+                }
+            }
             tElementNode = (/** @type {?} */ (getTNode(rootLView[TVIEW], 0)));
             if (projectableNodes) {
                 // projectable nodes can be passed as array of arrays or an array of iterables (ngUpgrade
@@ -40253,10 +40721,20 @@ function i18nStartFirstPass(lView, tView, index, message, subTemplateIndex) {
     /** @type {?} */
     const createOpCodes = [];
     // If the previous node wasn't the direct parent then we have a translation without top level
-    // element and we need to keep a reference of the previous element if there is one
+    // element and we need to keep a reference of the previous element if there is one. We should also
+    // keep track whether an element was a parent node or not, so that the logic that consumes
+    // the generated `I18nMutateOpCode`s can leverage this information to properly set TNode state
+    // (whether it's a parent or sibling).
     if (index > 0 && previousOrParentTNode !== parentTNode) {
+        /** @type {?} */
+        let previousTNodeIndex = previousOrParentTNode.index - HEADER_OFFSET;
+        // If current TNode is a sibling node, encode it using a negative index. This information is
+        // required when the `Select` action is processed (see the `readCreateOpCodes` function).
+        if (!getIsParent()) {
+            previousTNodeIndex = ~previousTNodeIndex;
+        }
         // Create an OpCode to select the previous TNode
-        createOpCodes.push(previousOrParentTNode.index << 3 /* SHIFT_REF */ | 0 /* Select */);
+        createOpCodes.push(previousTNodeIndex << 3 /* SHIFT_REF */ | 0 /* Select */);
     }
     /** @type {?} */
     const updateOpCodes = [];
@@ -40283,9 +40761,14 @@ function i18nStartFirstPass(lView, tView, index, message, subTemplateIndex) {
             else {
                 /** @type {?} */
                 const phIndex = parseInt(value.substr(1), 10);
-                // The value represents a placeholder that we move to the designated index
-                createOpCodes.push(phIndex << 3 /* SHIFT_REF */ | 0 /* Select */, parentIndex << 17 /* SHIFT_PARENT */ | 1 /* AppendChild */);
-                if (value.charAt(0) === "#" /* ELEMENT */) {
+                /** @type {?} */
+                const isElement = value.charAt(0) === "#" /* ELEMENT */;
+                // The value represents a placeholder that we move to the designated index.
+                // Note: positive indicies indicate that a TNode with a given index should also be marked as
+                // parent while executing `Select` instruction.
+                createOpCodes.push((isElement ? phIndex : ~phIndex) << 3 /* SHIFT_REF */ |
+                    0 /* Select */, parentIndex << 17 /* SHIFT_PARENT */ | 1 /* AppendChild */);
+                if (isElement) {
                     parentIndexStack[++parentIndexPointer] = parentIndex = phIndex;
                 }
             }
@@ -40679,13 +41162,17 @@ function readCreateOpCodes(index, createOpCodes, tView, lView) {
                         appendI18nNode(tView, (/** @type {?} */ (currentTNode)), destinationTNode, previousTNode, lView);
                     break;
                 case 0 /* Select */:
+                    // Negative indicies indicate that a given TNode is a sibling node, not a parent node
+                    // (see `i18nStartFirstPass` for additional information).
                     /** @type {?} */
-                    const nodeIndex = opCode >>> 3 /* SHIFT_REF */;
+                    const isParent = opCode >= 0;
+                    /** @type {?} */
+                    const nodeIndex = (isParent ? opCode : ~opCode) >>> 3 /* SHIFT_REF */;
                     visitedNodes.push(nodeIndex);
                     previousTNode = currentTNode;
                     currentTNode = getTNode(tView, nodeIndex);
                     if (currentTNode) {
-                        setPreviousOrParentTNode(currentTNode, currentTNode.type === 3 /* Element */);
+                        setPreviousOrParentTNode(currentTNode, isParent);
                     }
                     break;
                 case 5 /* ElementEnd */:
@@ -41451,12 +41938,6 @@ function getRegisteredNgModuleType(id) {
  */
 function NgModuleType() { }
 if (false) {}
-/** @type {?} */
-const COMPONENT_FACTORY_RESOLVER = {
-    provide: ComponentFactoryResolver,
-    useClass: ComponentFactoryResolver$1,
-    deps: [NgModuleRef],
-};
 /**
  * @template T
  */
@@ -41472,24 +41953,24 @@ class NgModuleRef$1 extends NgModuleRef {
         this._bootstrapComponents = [];
         this.injector = this;
         this.destroyCbs = [];
+        // When bootstrapping a module we have a dependency graph that looks like this:
+        // ApplicationRef -> ComponentFactoryResolver -> NgModuleRef. The problem is that if the
+        // module being resolved tries to inject the ComponentFactoryResolver, it'll create a
+        // circular dependency which will result in a runtime error, because the injector doesn't
+        // exist yet. We work around the issue by creating the ComponentFactoryResolver ourselves
+        // and providing it, rather than letting the injector resolve it.
+        this.componentFactoryResolver = new ComponentFactoryResolver$1(this);
         /** @type {?} */
         const ngModuleDef = getNgModuleDef(ngModuleType);
         ngDevMode && assertDefined(ngModuleDef, `NgModule '${stringify(ngModuleType)}' is not a subtype of 'NgModuleType'.`);
         /** @type {?} */
         const ngLocaleIdDef = getNgLocaleIdDef(ngModuleType);
-        if (ngLocaleIdDef) {
-            setLocaleId(ngLocaleIdDef);
-        }
+        ngLocaleIdDef && setLocaleId(ngLocaleIdDef);
         this._bootstrapComponents = maybeUnwrapFn((/** @type {?} */ (ngModuleDef)).bootstrap);
-        /** @type {?} */
-        const additionalProviders = [
-            {
-                provide: NgModuleRef,
-                useValue: this,
-            },
-            COMPONENT_FACTORY_RESOLVER
-        ];
-        this._r3Injector = (/** @type {?} */ (createInjector(ngModuleType, _parent, additionalProviders, stringify(ngModuleType))));
+        this._r3Injector = (/** @type {?} */ (createInjector(ngModuleType, _parent, [
+            { provide: NgModuleRef, useValue: this },
+            { provide: ComponentFactoryResolver, useValue: this.componentFactoryResolver }
+        ], stringify(ngModuleType))));
         this.instance = this.get(ngModuleType);
     }
     /**
@@ -41503,12 +41984,6 @@ class NgModuleRef$1 extends NgModuleRef {
             return this;
         }
         return this._r3Injector.get(token, notFoundValue, injectFlags);
-    }
-    /**
-     * @return {?}
-     */
-    get componentFactoryResolver() {
-        return this.get(ComponentFactoryResolver);
     }
     /**
      * @return {?}
@@ -42046,7 +42521,10 @@ function ɵɵpipe(index, pipeName) {
     /** @type {?} */
     const pipeFactory = pipeDef.factory || (pipeDef.factory = getFactoryDef(pipeDef.type, true));
     /** @type {?} */
+    const previousInjectImplementation = setInjectImplementation(ɵɵdirectiveInject);
+    /** @type {?} */
     const pipeInstance = pipeFactory();
+    setInjectImplementation(previousInjectImplementation);
     store(tView, getLView(), index, pipeInstance);
     return pipeInstance;
 }
@@ -42973,7 +43451,25 @@ class TQuery_ {
      */
     isApplyingToNode(tNode) {
         if (this._appliesToNextNode && this.metadata.descendants === false) {
-            return this._declarationNodeIndex === (tNode.parent ? tNode.parent.index : -1);
+            /** @type {?} */
+            const declarationNodeIdx = this._declarationNodeIndex;
+            /** @type {?} */
+            let parent = tNode.parent;
+            // Determine if a given TNode is a "direct" child of a node on which a content query was
+            // declared (only direct children of query's host node can match with the descendants: false
+            // option). There are 3 main use-case / conditions to consider here:
+            // - <needs-target><i #target></i></needs-target>: here <i #target> parent node is a query
+            // host node;
+            // - <needs-target><ng-template [ngIf]="true"><i #target></i></ng-template></needs-target>:
+            // here <i #target> parent node is null;
+            // - <needs-target><ng-container><i #target></i></ng-container></needs-target>: here we need
+            // to go past `<ng-container>` to determine <i #target> parent node (but we shouldn't traverse
+            // up past the query's host node!).
+            while (parent !== null && parent.type === 4 /* ElementContainer */ &&
+                parent.index !== declarationNodeIdx) {
+                parent = parent.parent;
+            }
+            return declarationNodeIdx === (parent !== null ? parent.index : -1);
         }
         return this._appliesToNextNode;
     }
@@ -43579,6 +44075,15 @@ const ɵ0$d = /**
     'ɵɵclassMapInterpolate8': ɵɵclassMapInterpolate8,
     'ɵɵclassMapInterpolateV': ɵɵclassMapInterpolateV,
     'ɵɵstyleMap': ɵɵstyleMap,
+    'ɵɵstyleMapInterpolate1': ɵɵstyleMapInterpolate1,
+    'ɵɵstyleMapInterpolate2': ɵɵstyleMapInterpolate2,
+    'ɵɵstyleMapInterpolate3': ɵɵstyleMapInterpolate3,
+    'ɵɵstyleMapInterpolate4': ɵɵstyleMapInterpolate4,
+    'ɵɵstyleMapInterpolate5': ɵɵstyleMapInterpolate5,
+    'ɵɵstyleMapInterpolate6': ɵɵstyleMapInterpolate6,
+    'ɵɵstyleMapInterpolate7': ɵɵstyleMapInterpolate7,
+    'ɵɵstyleMapInterpolate8': ɵɵstyleMapInterpolate8,
+    'ɵɵstyleMapInterpolateV': ɵɵstyleMapInterpolateV,
     'ɵɵstyleProp': ɵɵstyleProp,
     'ɵɵstylePropInterpolate1': ɵɵstylePropInterpolate1,
     'ɵɵstylePropInterpolate2': ɵɵstylePropInterpolate2,
@@ -44153,26 +44658,21 @@ function patchComponentDefWithScope(componentDef, transitiveScopes) {
 /**
  * Compute the pair of transitive scopes (compilation scope and exported scope) for a given module.
  *
- * By default this operation is memoized and the result is cached on the module's definition. You
- * can avoid memoization and previously stored results (if available) by providing the second
- * argument with the `true` value (forcing transitive scopes recalculation).
- *
- * This function can be called on modules with components that have not fully compiled yet, but the
- * result should not be used until they have.
+ * This operation is memoized and the result is cached on the module's definition. This function can
+ * be called on modules with components that have not fully compiled yet, but the result should not
+ * be used until they have.
  *
  * @template T
  * @param {?} moduleType module that transitive scope should be calculated for.
- * @param {?=} forceRecalc flag that indicates whether previously calculated and memoized values should
- * be ignored and transitive scope to be fully recalculated.
  * @return {?}
  */
-function transitiveScopesFor(moduleType, forceRecalc = false) {
+function transitiveScopesFor(moduleType) {
     if (!isNgModule(moduleType)) {
         throw new Error(`${moduleType.name} does not have a module def (ɵmod property)`);
     }
     /** @type {?} */
     const def = (/** @type {?} */ (getNgModuleDef(moduleType)));
-    if (!forceRecalc && def.transitiveCompileScopes !== null) {
+    if (def.transitiveCompileScopes !== null) {
         return def.transitiveCompileScopes;
     }
     /** @type {?} */
@@ -44218,7 +44718,7 @@ function transitiveScopesFor(moduleType, forceRecalc = false) {
         // When this module imports another, the imported module's exported directives and pipes are
         // added to the compilation scope of this module.
         /** @type {?} */
-        const importedScope = transitiveScopesFor(importedType, forceRecalc);
+        const importedScope = transitiveScopesFor(importedType);
         importedScope.exported.directives.forEach((/**
          * @param {?} entry
          * @return {?}
@@ -44244,7 +44744,7 @@ function transitiveScopesFor(moduleType, forceRecalc = false) {
             // When this module exports another, the exported module's exported directives and pipes are
             // added to both the compilation and exported scopes of this module.
             /** @type {?} */
-            const exportedScope = transitiveScopesFor(exportedType, forceRecalc);
+            const exportedScope = transitiveScopesFor(exportedType);
             exportedScope.exported.directives.forEach((/**
              * @param {?} entry
              * @return {?}
@@ -44269,9 +44769,7 @@ function transitiveScopesFor(moduleType, forceRecalc = false) {
             scopes.exported.directives.add(exportedType);
         }
     }));
-    if (!forceRecalc) {
-        def.transitiveCompileScopes = scopes;
-    }
+    def.transitiveCompileScopes = scopes;
     return scopes;
 }
 /**
@@ -52286,7 +52784,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ɵgetDOM", function() { return _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"]; });
 
 /**
- * @license Angular v9.0.0
+ * @license Angular v9.0.4
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -53336,7 +53834,7 @@ class DefaultDomRenderer2 {
     setAttribute(el, name, value, namespace) {
         if (namespace) {
             name = namespace + ':' + name;
-            // TODO(benlesh): Ivy may cause issues here because it's passing around
+            // TODO(FW-811): Ivy may cause issues here because it's passing around
             // full URIs for namespaces, therefore this lookup will fail.
             /** @type {?} */
             const namespaceUri = NAMESPACE_URIS[namespace];
@@ -53359,7 +53857,7 @@ class DefaultDomRenderer2 {
      */
     removeAttribute(el, name, namespace) {
         if (namespace) {
-            // TODO(benlesh): Ivy may cause issues here because it's passing around
+            // TODO(FW-811): Ivy may cause issues here because it's passing around
             // full URIs for namespaces, therefore this lookup will fail.
             /** @type {?} */
             const namespaceUri = NAMESPACE_URIS[namespace];
@@ -53367,7 +53865,7 @@ class DefaultDomRenderer2 {
                 el.removeAttributeNS(namespaceUri, name);
             }
             else {
-                // TODO(benlesh): Since ivy is passing around full URIs for namespaces
+                // TODO(FW-811): Since ivy is passing around full URIs for namespaces
                 // this could result in properties like `http://www.w3.org/2000/svg:cx="123"`,
                 // which is wrong.
                 el.removeAttribute(`${namespace}:${name}`);
@@ -54410,6 +54908,27 @@ if (false) {}
  * Generated from: packages/platform-browser/src/browser.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @return {?}
+ */
+function initDomAdapter() {
+    BrowserDomAdapter.makeCurrent();
+    BrowserGetTestability.init();
+}
+/**
+ * @return {?}
+ */
+function errorHandler() {
+    return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ErrorHandler"]();
+}
+/**
+ * @return {?}
+ */
+function _document() {
+    // Tell ivy about the global document
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetDocument"])(document);
+    return document;
+}
 const ɵ0$4 = _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵPLATFORM_BROWSER_ID"];
 /** @type {?} */
 const INTERNAL_BROWSER_PLATFORM_PROVIDERS = [
@@ -54437,27 +54956,6 @@ const BROWSER_SANITIZATION_PROVIDERS = BROWSER_SANITIZATION_PROVIDERS__POST_R3__
  * @type {?}
  */
 const platformBrowser = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["createPlatformFactory"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["platformCore"], 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
-/**
- * @return {?}
- */
-function initDomAdapter() {
-    BrowserDomAdapter.makeCurrent();
-    BrowserGetTestability.init();
-}
-/**
- * @return {?}
- */
-function errorHandler() {
-    return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ErrorHandler"]();
-}
-/**
- * @return {?}
- */
-function _document() {
-    // Tell ivy about the global document
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetDocument"])(document);
-    return document;
-}
 /** @type {?} */
 const BROWSER_MODULE_PROVIDERS = [
     BROWSER_SANITIZATION_PROVIDERS,
@@ -55198,7 +55696,7 @@ function elementMatches(n, selector) {
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('9.0.0');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('9.0.4');
 
 /**
  * @fileoverview added by tsickle
@@ -55307,7 +55805,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /**
- * @license Angular v9.0.0
+ * @license Angular v9.0.4
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -62301,7 +62799,7 @@ class RouterLink {
 }
 RouterLink.ɵfac = function RouterLink_Factory(t) { return new (t || RouterLink)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](Router), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinjectAttribute"]('tabindex'), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])); };
 RouterLink.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: RouterLink, selectors: [["", "routerLink", "", 5, "a", 5, "area"]], hostBindings: function RouterLink_HostBindings(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function RouterLink_click_HostBindingHandler($event) { return ctx.onClick(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function RouterLink_click_HostBindingHandler() { return ctx.onClick(); });
     } }, inputs: { routerLink: "routerLink", preserveQueryParams: "preserveQueryParams", queryParams: "queryParams", fragment: "fragment", queryParamsHandling: "queryParamsHandling", preserveFragment: "preserveFragment", skipLocationChange: "skipLocationChange", replaceUrl: "replaceUrl", state: "state" } });
 /** @nocollapse */
 RouterLink.ctorParameters = () => [
@@ -63427,9 +63925,9 @@ const ROUTER_PROVIDERS = [
         provide: Router,
         useFactory: setupRouter,
         deps: [
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ApplicationRef"], UrlSerializer, ChildrenOutletContexts, _angular_common__WEBPACK_IMPORTED_MODULE_0__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injector"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Compiler"], ROUTES, ROUTER_CONFIGURATION,
-            [UrlHandlingStrategy, new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]()], [RouteReuseStrategy, new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]()]
+            UrlSerializer, ChildrenOutletContexts, _angular_common__WEBPACK_IMPORTED_MODULE_0__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Compiler"],
+            ROUTES, ROUTER_CONFIGURATION, [UrlHandlingStrategy, new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]()],
+            [RouteReuseStrategy, new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]()]
         ]
     },
     ChildrenOutletContexts,
@@ -63652,7 +64150,6 @@ function provideRoutes(routes) {
 function ExtraOptions() { }
 if (false) {}
 /**
- * @param {?} ref
  * @param {?} urlSerializer
  * @param {?} contexts
  * @param {?} location
@@ -63665,7 +64162,7 @@ if (false) {}
  * @param {?=} routeReuseStrategy
  * @return {?}
  */
-function setupRouter(ref, urlSerializer, contexts, location, injector, loader, compiler, config, opts = {}, urlHandlingStrategy, routeReuseStrategy) {
+function setupRouter(urlSerializer, contexts, location, injector, loader, compiler, config, opts = {}, urlHandlingStrategy, routeReuseStrategy) {
     /** @type {?} */
     const router = new Router(null, urlSerializer, contexts, location, injector, loader, compiler, flatten(config));
     if (urlHandlingStrategy) {
@@ -63894,7 +64391,7 @@ function provideRouterInitializer() {
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('9.0.0');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('9.0.4');
 
 /**
  * @fileoverview added by tsickle
@@ -64229,7 +64726,7 @@ function PopupListComponent_div_0_div_6_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mc-button", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopupListComponent_div_0_div_6_div_1_Template_mc_button_click_4_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r64); const item_r62 = ctx.$implicit; const ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r63.onClickUnselectButton(item_r62); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopupListComponent_div_0_div_6_div_1_Template_mc_button_click_4_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r64); const item_r62 = ctx.$implicit; const ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r63.onClickUnselectButton(item_r62); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "mc-icon", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -64281,7 +64778,7 @@ function PopupListComponent_div_4_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mc-button", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopupListComponent_div_4_div_1_div_1_Template_mc_button_click_4_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r72); const item_r70 = ctx.$implicit; const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r71.onClickUnselectButton(item_r70); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopupListComponent_div_4_div_1_div_1_Template_mc_button_click_4_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r72); const item_r70 = ctx.$implicit; const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3); return ctx_r71.onClickUnselectButton(item_r70); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "mc-icon", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -66647,7 +67144,7 @@ DrawerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.drawerEr = _t.first);
     } }, inputs: { from: "from", tpl: "tpl", mask: "mask", visible: "visible" }, outputs: { hided: "hided" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 4, vars: 3, consts: [[3, "visible", "transparent", "click"], [1, "drawer"], ["drawerEr", ""], [4, "ngTemplateOutlet"]], template: function DrawerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mc-mask", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DrawerComponent_Template_mc_mask_click_0_listener($event) { return ctx.onClickMask(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DrawerComponent_Template_mc_mask_click_0_listener() { return ctx.onClickMask(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1, 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, DrawerComponent_ng_container_3_Template, 1, 0, "ng-container", 3);
@@ -67789,7 +68286,7 @@ PopupListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
     } }, inputs: { listHeight: "listHeight", rowHeight: "rowHeight", multiSelect: "multiSelect", height: "height", startFrom: "startFrom", selectedItems: "selectedItems", data: "data", itemTpl: "itemTpl", idField: "idField", nameField: "nameField" }, outputs: { needData: "needData" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]], decls: 5, vars: 15, consts: [["class", "popup-list--header", 4, "ngIf"], [1, "popup-list--body", 3, "click"], [3, "data", "itemTpl", "idField", "nameField", "rowHeight", "multiSelect", "selectedItems", "needData", "action"], ["listCmp", ""], [1, "popup-list--header"], [1, "popup-list--header--input"], [1, "popup-list--header--input--input", 3, "value", "valueChange"], ["inputCmp1", ""], [1, "popup-list--header--input--icon"], ["theme", "down"], ["class", "popup-list--header--selected-items", 4, "ngIf"], [1, "popup-list--header--selected-items"], ["class", "popup-list--header--selected-items--item", 4, "ngFor", "ngForOf"], [1, "popup-list--header--selected-items--item"], [1, "popup-list--header--selected-items--item--name"], [1, "popup-list--header--selected-items--item--delete"], ["theme", "icon", 3, "click"], [3, "theme"], ["inputCmp2", ""]], template: function PopupListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, PopupListComponent_div_0_Template, 7, 6, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopupListComponent_Template_div_click_1_listener($event) { return ctx.onClickListBody(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopupListComponent_Template_div_click_1_listener() { return ctx.onClickListBody(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mc-list", 2, 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("needData", function PopupListComponent_Template_mc_list_needData_2_listener($event) { return ctx.onListNeedData($event); })("action", function PopupListComponent_Template_mc_list_action_2_listener($event) { return ctx.onListAction($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

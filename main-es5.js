@@ -886,7 +886,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SigninComponent_Template_a_click_16_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SigninComponent_Template_a_click_16_listener() {
             return ctx.onClickForgotPassword();
           });
 
@@ -898,7 +898,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mc-button", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("press", function SigninComponent_Template_mc_button_press_18_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("press", function SigninComponent_Template_mc_button_press_18_listener() {
             return ctx.onPressSignin();
           });
 
@@ -914,7 +914,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SigninComponent_Template_a_click_22_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SigninComponent_Template_a_click_22_listener() {
             return ctx.onSignup();
           });
 
@@ -1135,6 +1135,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           id: '../../../assets/mp3/MachineLearningAlgorithms.mp3',
           name: 'Machine Learning Algorithms Overview',
           date: '02/10/2020'
+        }, {
+          id: '../../../assets/mp3/CompositionVsInheritance.mp3',
+          name: 'Composition vs Inheritance',
+          date: '03/02/2020'
         }].reverse();
         return _this5;
       }
